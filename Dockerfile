@@ -33,13 +33,6 @@ ARG PH_CONNECT_BASE_PATH="/"
 # Install ph-cmd, prisma, and prettier globally
 RUN pnpm add -g ph-cmd@$TAG prisma@5.17.0 prettier
 
-# Initialize project based on tag (dev/staging/latest)
-RUN case "$TAG" in \
-        *dev*) ph init project --dev --package-manager pnpm ;; \
-        *staging*) ph init project --staging --package-manager pnpm ;; \
-        *) ph init project --package-manager pnpm ;; \
-    esac
-
 WORKDIR /app/project
 
 # Copy all project files
