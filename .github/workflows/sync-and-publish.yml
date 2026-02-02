@@ -103,10 +103,10 @@ jobs:
           echo "Skip Docker: $SKIP_DOCKER"
 
   # ==========================================================================
-  # Update dependencies
+  # Update dependencies and publish to npm
   # ==========================================================================
   update-and-publish:
-    name: Update Dependencies
+    name: Update & Publish NPM
     needs: prepare
     runs-on: ubuntu-latest
     permissions:
@@ -138,17 +138,17 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Install ph-cli
-        run: |
-          CHANNEL="${{ needs.prepare.outputs.channel }}"
-          case "$CHANNEL" in
-            dev) pnpm add -g @powerhousedao/ph-cli@dev ;;
-            staging) pnpm add -g @powerhousedao/ph-cli@staging ;;
-            *) pnpm add -g @powerhousedao/ph-cli@latest ;;
-          esac
+      # - name: Install ph-cli
+      #   run: |
+      #     CHANNEL="${{ needs.prepare.outputs.channel }}"
+      #     case "$CHANNEL" in
+      #       dev) pnpm add -g @powerhousedao/ph-cli@dev ;;
+      #       staging) pnpm add -g @powerhousedao/ph-cli@staging ;;
+      #       *) pnpm add -g @powerhousedao/ph-cli@latest ;;
+      #     esac
 
-      - name: Update Powerhouse dependencies
-        run: ph update
+      # - name: Update Powerhouse dependencies
+      #   run: ph update
 
       - name: Install dependencies
         run: pnpm install
@@ -182,10 +182,7 @@ jobs:
       - name: Commit changes
         run: |
           git add package.json pnpm-lock.yaml
-          git commit -m "chore: sync powerhouse dependencies to ${{ needs.prepare.outputs.version }}
-
-          - Updated to powerhouse ${{ needs.prepare.outputs.version }}
-          - Bumped version to ${{ steps.version.outputs.new_version }}" || echo "No changes to commit"
+          git commit -m "chore: bump version to ${{ steps.version.outputs.new_version }}" || echo "No changes to commit"
 
       - name: Push changes
         if: needs.prepare.outputs.dry_run != 'true'
