@@ -81,12 +81,7 @@ jobs:
             *) BRANCH="staging" ;;
           esac
 
-          # Use DOCKER_PROJECT secret if set, otherwise extract from repository name
-          if [ -n "${{ secrets.DOCKER_PROJECT }}" ]; then
-            PROJECT_NAME="${{ secrets.DOCKER_PROJECT }}"
-          else
-            PROJECT_NAME="${GITHUB_REPOSITORY#*/}"
-          fi
+          PROJECT_NAME="demo"
 
           echo "channel=$CHANNEL" >> $GITHUB_OUTPUT
           echo "version=$VERSION" >> $GITHUB_OUTPUT
@@ -250,33 +245,33 @@ jobs:
           PROJECT_NAME="${{ needs.prepare.outputs.project_name }}"
 
           # Check if project exists, create if not
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \\
-            -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \\
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \
             "https://${{ env.DOCKER_REGISTRY }}/api/v2.0/projects?name=${PROJECT_NAME}")
 
           if [ "$STATUS" = "200" ]; then
             # Check if the project is in the response
-            EXISTS=$(curl -s \\
-              -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \\
-              "https://${{ env.DOCKER_REGISTRY }}/api/v2.0/projects?name=${PROJECT_NAME}" | \\
-              jq -r ".[] | select(.name==\\"${PROJECT_NAME}\\") | .name")
+            EXISTS=$(curl -s \
+              -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \
+              "https://${{ env.DOCKER_REGISTRY }}/api/v2.0/projects?name=${PROJECT_NAME}" | \
+              jq -r ".[] | select(.name==\"${PROJECT_NAME}\") | .name")
 
             if [ "$EXISTS" = "$PROJECT_NAME" ]; then
               echo "Project ${PROJECT_NAME} already exists"
             else
               echo "Creating project ${PROJECT_NAME}..."
-              curl -X POST \\
-                -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \\
-                -H "Content-Type: application/json" \\
-                -d "{\\"project_name\\": \\"${PROJECT_NAME}\\", \\"public\\": false}" \\
+              curl -X POST \
+                -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \
+                -H "Content-Type: application/json" \
+                -d "{\"project_name\": \"${PROJECT_NAME}\", \"public\": false}" \
                 "https://${{ env.DOCKER_REGISTRY }}/api/v2.0/projects"
             fi
           else
             echo "Creating project ${PROJECT_NAME}..."
-            curl -X POST \\
-              -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \\
-              -H "Content-Type: application/json" \\
-              -d "{\\"project_name\\": \\"${PROJECT_NAME}\\", \\"public\\": false}" \\
+            curl -X POST \
+              -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \
+              -H "Content-Type: application/json" \
+              -d "{\"project_name\": \"${PROJECT_NAME}\", \"public\": false}" \
               "https://${{ env.DOCKER_REGISTRY }}/api/v2.0/projects"
           fi
 
@@ -367,5 +362,5 @@ jobs:
           echo "| Dry Run | ${{ needs.prepare.outputs.dry_run }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Docker Images" >> $GITHUB_STEP_SUMMARY
-          echo "- \\`${{ env.DOCKER_REGISTRY }}/${{ needs.prepare.outputs.project_name }}/connect:v${{ needs.update-and-publish.outputs.new_version }}\\`" >> $GITHUB_STEP_SUMMARY
-          echo "- \\`${{ env.DOCKER_REGISTRY }}/${{ needs.prepare.outputs.project_name }}/switchboard:v${{ needs.update-and-publish.outputs.new_version }}\\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.DOCKER_REGISTRY }}/${{ needs.prepare.outputs.project_name }}/connect:v${{ needs.update-and-publish.outputs.new_version }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`${{ env.DOCKER_REGISTRY }}/${{ needs.prepare.outputs.project_name }}/switchboard:v${{ needs.update-and-publish.outputs.new_version }}\`" >> $GITHUB_STEP_SUMMARY
