@@ -42,18 +42,22 @@ RUN case "$TAG" in \
 
 WORKDIR /app/project
 
-# Copy package files for the current package
+# Copy all project files
 COPY package.json pnpm-lock.yaml ./
+COPY powerhouse.manifest.json powerhouse.config.json ./
+COPY tsconfig*.json vite.config.ts vitest.config.ts eslint.config.js ./
+COPY document-models/ ./document-models/
+COPY editors/ ./editors/
+COPY processors/ ./processors/
+COPY subgraphs/ ./subgraphs/
+COPY src/ ./src/
+COPY index.ts index.html style.css ./
 
-# Install the current package (this package)
-ARG PACKAGE_NAME
-RUN if [ -n "$PACKAGE_NAME" ]; then \
-        echo "Installing package: $PACKAGE_NAME"; \
-        ph install "$PACKAGE_NAME"; \
-    else \
-        echo "Warning: PACKAGE_NAME not provided, using local build"; \
-        pnpm install; \
-    fi
+# Install dependencies
+RUN pnpm install
+
+# Build the project
+RUN pnpm build
 
 # Regenerate Prisma client for Alpine Linux
 RUN prisma generate --schema node_modules/document-drive/dist/prisma/schema.prisma || true
