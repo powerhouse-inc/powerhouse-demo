@@ -24,78 +24,61 @@ const stateReducer: StateReducer<ClickerGamePHState> = (
   if (isDocumentAction(action)) {
     return state;
   }
-  switch (action.type) {
-    case "ADD_PLAYER": {
-      AddPlayerInputSchema().parse(action.input);
 
+  switch (action.type) {
+    case "ADD_PLAYER":
+      AddPlayerInputSchema().parse(action.input);
       clickerGameGameOperations.addPlayerOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,
       );
-
       break;
-    }
 
-    case "CLICK": {
+    case "CLICK":
       ClickInputSchema().parse(action.input);
-
       clickerGameGameOperations.clickOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,
       );
-
       break;
-    }
 
-    case "REMOVE_PLAYER": {
+    case "REMOVE_PLAYER":
       RemovePlayerInputSchema().parse(action.input);
-
       clickerGameGameOperations.removePlayerOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,
       );
-
       break;
-    }
 
-    case "RESET_GAME": {
+    case "RESET_GAME":
       ResetGameInputSchema().parse(action.input);
-
       clickerGameGameOperations.resetGameOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,
       );
-
       break;
-    }
 
-    case "START_GAME": {
+    case "START_GAME":
       StartGameInputSchema().parse(action.input);
-
       clickerGameGameOperations.startGameOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,
       );
-
       break;
-    }
 
-    case "STOP_GAME": {
+    case "STOP_GAME":
       StopGameInputSchema().parse(action.input);
-
       clickerGameGameOperations.stopGameOperation(
         (state as any)[action.scope],
         action as any,
         dispatch,
       );
-
       break;
-    }
 
     default:
       return state;

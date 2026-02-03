@@ -3,7 +3,6 @@ import type { ClickerGameAction } from "./actions.js";
 import type { ClickerGameState as ClickerGameGlobalState } from "./schema/types.js";
 
 type ClickerGameLocalState = Record<PropertyKey, never>;
-
 type ClickerGamePHState = PHBaseState & {
   global: ClickerGameGlobalState;
   local: ClickerGameLocalState;

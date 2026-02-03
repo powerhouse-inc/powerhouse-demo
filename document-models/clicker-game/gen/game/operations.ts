@@ -1,13 +1,13 @@
 import { type SignalDispatch } from "document-model";
-import type {
-  AddPlayerAction,
-  ClickAction,
-  RemovePlayerAction,
-  ResetGameAction,
-  StartGameAction,
-  StopGameAction,
+import {
+  type AddPlayerAction,
+  type ClickAction,
+  type RemovePlayerAction,
+  type ResetGameAction,
+  type StartGameAction,
+  type StopGameAction,
 } from "./actions.js";
-import type { ClickerGameState } from "../types.js";
+import { type ClickerGameState } from "../types.js";
 
 export interface ClickerGameGameOperations {
   addPlayerOperation: (

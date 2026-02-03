@@ -142,13 +142,13 @@ export const documentModel: DocumentModelGlobalState = {
       state: {
         global: {
           examples: [],
-          initialValue: '{ "gameMaster": null, "players": [] }',
+          initialValue: '"{ \\"gameMaster\\": null, \\"players\\": [] }"',
           schema:
             "type ClickerGameState {\n  gameMaster: String\n  players: [Player!]!\n}\n\ntype Player {\n  id: OID!\n  name: String!\n  clicks: Int!\n}",
         },
         local: {
           examples: [],
-          initialValue: "",
+          initialValue: '""',
           schema: "",
         },
       },

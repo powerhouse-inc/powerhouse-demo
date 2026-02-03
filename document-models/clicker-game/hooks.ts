@@ -1,18 +1,15 @@
 import type { DocumentDispatch } from "@powerhousedao/reactor-browser";
 import {
-  useDocumentById,
   useDocumentsInSelectedDrive,
   useDocumentsInSelectedFolder,
+  useDocumentById,
   useSelectedDocument,
 } from "@powerhousedao/reactor-browser";
 import type {
-  ClickerGameAction,
   ClickerGameDocument,
+  ClickerGameAction,
 } from "powerhouse-demo/document-models/clicker-game";
-import {
-  assertIsClickerGameDocument,
-  isClickerGameDocument,
-} from "./gen/document-schema.js";
+import { isClickerGameDocument } from "./gen/document-schema.js";
 
 /** Hook to get a ClickerGame document by its id */
 export function useClickerGameDocumentById(
@@ -26,14 +23,12 @@ export function useClickerGameDocumentById(
 }
 
 /** Hook to get the selected ClickerGame document */
-export function useSelectedClickerGameDocument(): [
-  ClickerGameDocument,
-  DocumentDispatch<ClickerGameAction>,
-] {
+export function useSelectedClickerGameDocument():
+  | [ClickerGameDocument, DocumentDispatch<ClickerGameAction>]
+  | [undefined, undefined] {
   const [document, dispatch] = useSelectedDocument();
-
-  assertIsClickerGameDocument(document);
-  return [document, dispatch] as const;
+  if (!isClickerGameDocument(document)) return [undefined, undefined];
+  return [document, dispatch];
 }
 
 /** Hook to get all ClickerGame documents in the selected drive */

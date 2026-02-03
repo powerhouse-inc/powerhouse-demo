@@ -53,8 +53,18 @@ export class NotGameMasterError extends Error implements ReducerError {
 }
 
 export const errors = {
-  AddPlayer: { DuplicatePlayerError, NotAuthorizedError, GameNotStartedError },
-  Click: { PlayerNotFoundError },
-  StartGame: { GameAlreadyStartedError },
-  StopGame: { NotGameMasterError },
+  AddPlayer: {
+    DuplicatePlayerError,
+    NotAuthorizedError,
+    GameNotStartedError,
+  },
+  Click: {
+    PlayerNotFoundError,
+  },
+  StartGame: {
+    GameAlreadyStartedError,
+  },
+  StopGame: {
+    NotGameMasterError,
+  },
 };

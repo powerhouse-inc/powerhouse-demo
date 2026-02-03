@@ -11,7 +11,6 @@ import {
 
 /** Document model module for the Todo List document type */
 export const ClickerGame: DocumentModelModule<ClickerGamePHState> = {
-  version: 1,
   reducer,
   actions,
   utils,
