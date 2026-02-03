@@ -1,14 +1,15 @@
-export * from "./actions.js";
-export * from "./document-model.js";
-export * from "./types.js";
-export * from "./creators.js";
+
+export * from './actions.js';
+export * from './document-model.js';
+export * from './types.js';
+export * from './creators.js';
 export {
   createClickerGameDocument,
   createState,
   defaultPHState,
   defaultGlobalState,
   defaultLocalState,
-} from "./ph-factories.js";
+} from './ph-factories.js';
 export * from "./utils.js";
 export * from "./reducer.js";
 export * from "./schema/index.js";

@@ -1,8 +1,16 @@
+
 /**
  * Factory methods for creating ClickerGameDocument instances
  */
-import type { PHAuthState, PHDocumentState, PHBaseState } from "document-model";
-import { createBaseState, defaultBaseState } from "document-model/core";
+import type {
+  PHAuthState,
+  PHDocumentState,
+  PHBaseState,
+} from "document-model";
+import {
+  createBaseState,
+  defaultBaseState,
+} from "document-model/core";
 import type {
   ClickerGameDocument,
   ClickerGameLocalState,
@@ -12,7 +20,7 @@ import type {
 import { createDocument } from "./utils.js";
 
 export function defaultGlobalState(): ClickerGameGlobalState {
-  return { gameMaster: null, players: [] };
+  return { "gameMaster": null, "players": [] };
 }
 
 export function defaultLocalState(): ClickerGameLocalState {
@@ -71,13 +79,11 @@ export function createClickerGameDocument(
   }>,
 ): ClickerGameDocument {
   const document = createDocument(
-    state
-      ? createState(
-          createBaseState(state.auth, state.document),
-          state.global,
-          state.local,
-        )
-      : undefined,
+    state ? createState(
+      createBaseState(state.auth, state.document),
+      state.global,
+      state.local,
+    ) : undefined
   );
 
   return document;

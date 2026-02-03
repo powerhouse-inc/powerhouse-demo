@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod";
 import type {
   AddPlayerInput,
   ClickInput,
@@ -11,7 +11,7 @@ import type {
 } from "./types.js";
 
 type Properties<T> = Required<{
-  [K in keyof T]: z.ZodType<T[K], any, T[K]>;
+  [K in keyof T]: z.ZodType<T[K]>;
 }>;
 
 type definedNonNullAny = {};
@@ -42,8 +42,8 @@ export function ClickerGameStateSchema(): z.ZodObject<
 > {
   return z.object({
     __typename: z.literal("ClickerGameState").optional(),
-    gameMaster: z.string().nullable(),
-    players: z.array(PlayerSchema()),
+    gameMaster: z.string().nullish(),
+    players: z.array(z.lazy(() => PlayerSchema())),
   });
 }
 
