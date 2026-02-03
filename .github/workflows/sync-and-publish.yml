@@ -133,20 +133,41 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # - name: Install ph-cli
-      #   run: |
-      #     CHANNEL="${{ needs.prepare.outputs.channel }}"
-      #     case "$CHANNEL" in
-      #       dev) pnpm add -g @powerhousedao/ph-cli@dev ;;
-      #       staging) pnpm add -g @powerhousedao/ph-cli@staging ;;
-      #       *) pnpm add -g @powerhousedao/ph-cli@latest ;;
-      #     esac
-
-      # - name: Update Powerhouse dependencies
-      #   run: ph update
-
       - name: Install dependencies
         run: pnpm install
+
+      - name: Update Powerhouse dependencies
+        if: needs.prepare.outputs.version != ''
+        run: |
+          VERSION="${{ needs.prepare.outputs.version }}"
+          # Strip 'v' prefix if present
+          VERSION="${VERSION#v}"
+
+          echo "Updating @powerhousedao/* packages to version $VERSION"
+
+          # List of monorepo packages to update
+          PACKAGES=(
+            "@powerhousedao/builder-tools"
+            "@powerhousedao/codegen"
+            "@powerhousedao/common"
+            "@powerhousedao/config"
+            "@powerhousedao/connect"
+            "@powerhousedao/design-system"
+            "@powerhousedao/ph-cli"
+            "@powerhousedao/reactor-api"
+            "@powerhousedao/reactor-browser"
+            "@powerhousedao/reactor-local"
+            "@powerhousedao/switchboard"
+            "@powerhousedao/vetra"
+          )
+
+          # Update each package
+          for pkg in "${PACKAGES[@]}"; do
+            echo "Updating $pkg to $VERSION"
+            pnpm add "${pkg}@${VERSION}" || echo "Warning: Failed to update $pkg"
+          done
+
+          echo "Dependencies updated"
 
       - name: Build package
         run: pnpm build
@@ -177,7 +198,11 @@ jobs:
       - name: Commit changes
         run: |
           git add package.json pnpm-lock.yaml
-          git commit -m "chore: bump version to ${{ steps.version.outputs.new_version }}" || echo "No changes to commit"
+          if [ -n "${{ needs.prepare.outputs.version }}" ]; then
+            git commit -m "chore: bump version to ${{ steps.version.outputs.new_version }} (powerhouse ${{ needs.prepare.outputs.version }})" || echo "No changes to commit"
+          else
+            git commit -m "chore: bump version to ${{ steps.version.outputs.new_version }}" || echo "No changes to commit"
+          fi
 
       - name: Push changes
         if: needs.prepare.outputs.dry_run != 'true'
