@@ -27,11 +27,10 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 RUN pnpm config set @jsr:registry https://npm.jsr.io
 
 # Build arguments
-ARG TAG=latest
 ARG PH_CONNECT_BASE_PATH="/"
 
-# Install ph-cmd, prisma, and prettier globally
-RUN pnpm add -g ph-cmd@$TAG prisma@5.17.0 prettier
+# Install prisma and prettier globally
+RUN pnpm add -g prisma@5.17.0 prettier
 
 WORKDIR /app/project
 
@@ -62,7 +61,7 @@ FROM base AS connect-builder
 ARG PH_CONNECT_BASE_PATH="/"
 
 # Build connect
-RUN ph connect build --base ${PH_CONNECT_BASE_PATH}
+RUN pnpm run connect build --base ${PH_CONNECT_BASE_PATH}
 
 # -----------------------------------------------------------------------------
 # Connect final stage - nginx
@@ -111,9 +110,8 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 # Configure JSR registry
 RUN pnpm config set @jsr:registry https://npm.jsr.io
 
-# Install ph-cmd and prisma globally (needed at runtime)
-ARG TAG=latest
-RUN pnpm add -g ph-cmd@$TAG prisma@5.17.0
+# Install prisma globally (needed for migrations)
+RUN pnpm add -g prisma@5.17.0
 
 # Copy built project from build stage
 COPY --from=base /app/project /app/project
