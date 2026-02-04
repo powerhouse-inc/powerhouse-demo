@@ -369,11 +369,67 @@ jobs:
           cache-to: type=gha,mode=max
 
   # ==========================================================================
+  # Update k8s-hosting repo with new image tags (GitOps)
+  # ==========================================================================
+  update-k8s:
+    name: Update K8s Hosting
+    needs: [prepare, update-and-publish, build-docker]
+    if: |
+      needs.prepare.outputs.dry_run != 'true' &&
+      (needs.prepare.outputs.channel == 'dev' || needs.prepare.outputs.channel == 'staging')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout k8s-hosting repository
+        uses: actions/checkout@v4
+        with:
+          repository: powerhouse-inc/powerhouse-k8s-hosting
+          token: ${{ secrets.K8S_REPO_PAT }}
+          path: k8s-hosting
+
+      - name: Install yq
+        uses: mikefarah/yq@v4
+
+      - name: Update image tags
+        run: |
+          CHANNEL="${{ needs.prepare.outputs.channel }}"
+          VERSION="v${{ needs.update-and-publish.outputs.new_version }}"
+          VALUES_FILE="k8s-hosting/tenants/${CHANNEL}/powerhouse-values.yaml"
+
+          echo "Updating ${VALUES_FILE} with version ${VERSION}"
+
+          # Update switchboard image tag
+          yq -i ".switchboard.image.tag = \"${VERSION}\"" "$VALUES_FILE"
+
+          # Update connect image tag
+          yq -i ".connect.image.tag = \"${VERSION}\"" "$VALUES_FILE"
+
+          echo "Updated image tags to ${VERSION}"
+          cat "$VALUES_FILE" | grep -A2 "image:" | head -20
+
+      - name: Commit and push changes
+        run: |
+          cd k8s-hosting
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          CHANNEL="${{ needs.prepare.outputs.channel }}"
+          VERSION="v${{ needs.update-and-publish.outputs.new_version }}"
+
+          git add "tenants/${CHANNEL}/powerhouse-values.yaml"
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore(${CHANNEL}): update image tags to ${VERSION}"
+            git push
+          fi
+
+  # ==========================================================================
   # Summary
   # ==========================================================================
   summary:
     name: Release Summary
-    needs: [prepare, update-and-publish, build-docker]
+    needs: [prepare, update-and-publish, build-docker, update-k8s]
     if: always()
     runs-on: ubuntu-latest
     steps:
