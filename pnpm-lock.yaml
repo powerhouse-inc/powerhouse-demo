@@ -52,8 +52,8 @@ importers:
         specifier: 6.0.0-dev.39
         version: 6.0.0-dev.39(e7eae70e33056924d0946bb6bcc228ce)
       '@powerhousedao/config':
-        specifier: 6.0.0-dev.39
-        version: 6.0.0-dev.39(@types/node@24.10.11)
+        specifier: 6.0.0-dev.43
+        version: 6.0.0-dev.43(@types/node@24.10.11)
       '@powerhousedao/connect':
         specifier: 6.0.0-dev.39
         version: 6.0.0-dev.39(f3159abef0de18c1661af894be3cc39b)
@@ -3546,6 +3546,9 @@ packages:
 
   '@powerhousedao/config@6.0.0-dev.39':
     resolution: {integrity: sha512-mB1LVHkFCFjM+4bEPWM37LaypyA33rwIwOufgTiC9rodhd6Q3pgzbO/aGMT62MZzzDzN6kOyzsdi3J2LI/KKVg==}
+
+  '@powerhousedao/config@6.0.0-dev.43':
+    resolution: {integrity: sha512-8Tb7XsvoHOs0XTEasYHgThXKRJCtSf7AZruiYfS/DoEhAlT1CHN9G6dQHHwNIL9bSmczfm2O6rvQhy9pWevnKw==}
 
   '@powerhousedao/connect@6.0.0-dev.39':
     resolution: {integrity: sha512-fVq4N5x0DhotlNw+Or85ifeMhBnrWH9vAaVfhaJNTGPm8C+DU1hkVKCN0N7qFJTUSvL5cp1to+EPP0kNYUdBbQ==}
@@ -18868,6 +18871,12 @@ snapshots:
       - '@types/node'
 
   '@powerhousedao/config@6.0.0-dev.39(@types/node@24.10.11)':
+    dependencies:
+      '@microsoft/api-extractor': 7.56.2(@types/node@24.10.11)
+    transitivePeerDependencies:
+      - '@types/node'
+
+  '@powerhousedao/config@6.0.0-dev.43(@types/node@24.10.11)':
     dependencies:
       '@microsoft/api-extractor': 7.56.2(@types/node@24.10.11)
     transitivePeerDependencies:
