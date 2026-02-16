@@ -5,114 +5,89 @@ on:
   repository_dispatch:
     types: [powerhouse-release]
 
-  # Manual trigger
+  # Manual trigger or dispatched per-branch
   workflow_dispatch:
     inputs:
       channel:
-        description: "Release channel"
+        description: 'Release channel'
         required: true
         type: choice
         options:
           - dev
           - staging
           - latest
-        default: "staging"
-      version:
-        description: "Powerhouse version (e.g., 5.3.0-staging.6)"
+        default: 'dev'
+      sync:
+        description: 'Sync powerhouse dependencies first'
         required: false
-        type: string
+        type: boolean
+        default: true
       dry-run:
-        description: "Dry run (skip publishing)"
+        description: 'Dry run (skip publishing)'
         required: false
         type: boolean
         default: false
       skip-docker:
-        description: "Skip Docker build and push"
+        description: 'Skip Docker build and push'
         required: false
         type: boolean
         default: false
+      powerhouse-version:
+        description: 'Powerhouse monorepo version (set by dispatch)'
+        required: false
+        type: string
+        default: ''
 
 env:
-  NODE_VERSION: "24"
-  PNPM_VERSION: "10"
+  NODE_VERSION: '24'
+  PNPM_VERSION: '10'
   DOCKER_REGISTRY: cr.vetra.io
   GHCR_REGISTRY: ghcr.io
 
 jobs:
   # ==========================================================================
-  # Determine release parameters
+  # Fan out: dispatch per-branch runs (repository_dispatch only, latest only)
   # ==========================================================================
-  prepare:
-    name: Prepare Release
+  dispatch:
+    name: Dispatch (${{ matrix.channel }})
+    if: github.event_name == 'repository_dispatch' && github.event.client_payload.channel == 'latest'
     runs-on: ubuntu-latest
-    outputs:
-      channel: ${{ steps.params.outputs.channel }}
-      version: ${{ steps.params.outputs.version }}
-      branch: ${{ steps.params.outputs.branch }}
-      project_name: ${{ steps.params.outputs.project_name }}
-      dry_run: ${{ steps.params.outputs.dry_run }}
-      skip_docker: ${{ steps.params.outputs.skip_docker }}
+    strategy:
+      matrix:
+        include:
+          - branch: main
+            channel: latest
+          - branch: staging
+            channel: staging
+          - branch: dev
+            channel: dev
     steps:
-      - name: Determine parameters
-        id: params
+      - name: Trigger workflow on ${{ matrix.branch }}
         run: |
-          # Get channel from dispatch payload or input
-          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
-            CHANNEL="${{ github.event.client_payload.channel }}"
-            VERSION="${{ github.event.client_payload.version }}"
-            DRY_RUN="false"
-            SKIP_DOCKER="false"
-          else
-            CHANNEL="${{ inputs.channel }}"
-            VERSION="${{ inputs.version }}"
-            DRY_RUN="${{ inputs.dry-run }}"
-            SKIP_DOCKER="${{ inputs.skip-docker }}"
-          fi
-
-          # Default channel to staging if not set
-          CHANNEL="${CHANNEL:-staging}"
-
-          # Determine branch from channel
-          case "$CHANNEL" in
-            dev) BRANCH="dev" ;;
-            staging) BRANCH="staging" ;;
-            latest|main) BRANCH="main" ;;
-            *) BRANCH="staging" ;;
-          esac
-
-          PROJECT_NAME="demo"
-
-          echo "channel=$CHANNEL" >> $GITHUB_OUTPUT
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
-          echo "project_name=$PROJECT_NAME" >> $GITHUB_OUTPUT
-          echo "dry_run=$DRY_RUN" >> $GITHUB_OUTPUT
-          echo "skip_docker=$SKIP_DOCKER" >> $GITHUB_OUTPUT
-
-          echo "Channel: $CHANNEL"
-          echo "Version: $VERSION"
-          echo "Branch: $BRANCH"
-          echo "Project: $PROJECT_NAME"
-          echo "Dry Run: $DRY_RUN"
-          echo "Skip Docker: $SKIP_DOCKER"
+          gh workflow run "Sync and Publish" \
+            --repo "${{ github.repository }}" \
+            --ref "${{ matrix.branch }}" \
+            -f channel="${{ matrix.channel }}" \
+            -f sync=true \
+            -f dry-run=false \
+            -f skip-docker=false \
+            -f powerhouse-version="${{ github.event.client_payload.version }}"
+        env:
+          GH_TOKEN: ${{ secrets.K8S_REPO_PAT }}
 
   # ==========================================================================
-  # Update dependencies and publish to npm
+  # Sync powerhouse dependencies (workflow_dispatch only)
   # ==========================================================================
-  update-and-publish:
-    name: Update & Publish NPM
-    needs: prepare
+  sync:
+    name: Sync Dependencies
+    if: github.event_name == 'workflow_dispatch' && inputs.sync == true
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write
-    outputs:
-      new_version: ${{ steps.version.outputs.new_version }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ needs.prepare.outputs.branch }}
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -125,48 +100,99 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - name: Configure git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Update Powerhouse dependencies
+        run: |
+          pnpm update --latest $(node -e "
+            const pkg = require('./package.json');
+            const deps = {...pkg.dependencies, ...pkg.devDependencies};
+            const names = Object.keys(deps).filter(d => d.startsWith('@powerhousedao/') || ['document-model','document-drive','ph-cmd'].includes(d));
+            console.log(names.join(' '));
+          ")
+
       - name: Install dependencies
         run: pnpm install
 
-      - name: Update Powerhouse dependencies
-        if: needs.prepare.outputs.version != ''
+      - name: Generate code
+        run: pnpm generate
+
+      - name: Build package
+        run: pnpm build
+
+      - name: Check for changes
+        id: changes
         run: |
-          VERSION="${{ needs.prepare.outputs.version }}"
-          # Strip 'v' prefix if present
-          VERSION="${VERSION#v}"
+          if git diff --quiet package.json pnpm-lock.yaml; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No dependency changes detected"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Dependency changes detected"
+          fi
 
-          echo "Updating @powerhousedao/* packages to version $VERSION"
+      - name: Commit changes
+        if: steps.changes.outputs.has_changes == 'true' && inputs.dry-run != true
+        run: |
+          git add package.json pnpm-lock.yaml
+          git add -A document-models/*/gen/ editors/*/gen/ || true
+          PH_VERSION="${{ inputs.powerhouse-version }}"
+          if [ -n "$PH_VERSION" ]; then
+            git commit -m "chore: sync powerhouse dependencies to $PH_VERSION"
+          else
+            git commit -m "chore: sync powerhouse dependencies"
+          fi
 
-          # List of monorepo packages to update
-          PACKAGES=(
-            "@powerhousedao/builder-tools"
-            "@powerhousedao/codegen"
-            "@powerhousedao/common"
-            "@powerhousedao/config"
-            "@powerhousedao/connect"
-            "@powerhousedao/design-system"
-            "@powerhousedao/ph-cli"
-            "@powerhousedao/reactor-api"
-            "@powerhousedao/reactor-browser"
-            "@powerhousedao/reactor-local"
-            "@powerhousedao/switchboard"
-            "@powerhousedao/vetra"
-          )
+      - name: Push changes
+        if: steps.changes.outputs.has_changes == 'true' && inputs.dry-run != true
+        run: git push
 
-          # Update each package
-          for pkg in "${PACKAGES[@]}"; do
-            echo "Updating $pkg to $VERSION"
-            pnpm add "${pkg}@${VERSION}" || echo "Warning: Failed to update $pkg"
-          done
+  # ==========================================================================
+  # Release: version bump + npm publish (workflow_dispatch only)
+  # ==========================================================================
+  release:
+    name: Release
+    needs: sync
+    if: always() && github.event_name == 'workflow_dispatch' && (needs.sync.result == 'success' || needs.sync.result == 'skipped')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    outputs:
+      new_version: ${{ steps.version.outputs.new_version }}
+      released: ${{ steps.version.outputs.released }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-          echo "Dependencies updated"
+      - name: Pull latest changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin ${{ github.ref_name }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Generate code
         run: pnpm generate
@@ -181,15 +207,13 @@ jobs:
       - name: Bump version
         id: version
         run: |
-          CHANNEL="${{ needs.prepare.outputs.channel }}"
+          CHANNEL="${{ inputs.channel }}"
           CURRENT_VERSION=$(node -p "require('./package.json').version")
 
           # Determine new version
           if [ "$CHANNEL" = "latest" ] || [ "$CHANNEL" = "main" ]; then
-            # For production, use patch bump
             npm version patch --no-git-tag-version
           else
-            # For dev/staging, use prerelease
             npm version prerelease --preid=$CHANNEL --no-git-tag-version
           fi
 
@@ -197,35 +221,31 @@ jobs:
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
           echo "Bumped version: $CURRENT_VERSION -> $NEW_VERSION"
 
-      - name: Commit changes
+          # Check if this version is already published on npm
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          if npm view "${PACKAGE_NAME}@${NEW_VERSION}" version 2>/dev/null; then
+            echo "released=false" >> $GITHUB_OUTPUT
+            echo "Version $NEW_VERSION already published, skipping"
+          else
+            echo "released=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and tag
+        if: inputs.dry-run != true && steps.version.outputs.released == 'true'
         run: |
           git add package.json pnpm-lock.yaml
           git add -A document-models/*/gen/ editors/*/gen/ || true
-          if [ -n "${{ needs.prepare.outputs.version }}" ]; then
-            git commit -m "chore: bump version to ${{ steps.version.outputs.new_version }} (powerhouse ${{ needs.prepare.outputs.version }})" || echo "No changes to commit"
+          PH_VERSION="${{ inputs.powerhouse-version }}"
+          if [ -n "$PH_VERSION" ]; then
+            git commit -m "chore: bump version to ${{ steps.version.outputs.new_version }} (powerhouse $PH_VERSION)" || echo "No changes to commit"
           else
             git commit -m "chore: bump version to ${{ steps.version.outputs.new_version }}" || echo "No changes to commit"
           fi
-
-      - name: Push changes
-        if: needs.prepare.outputs.dry_run != 'true'
-        run: git push
-
-      - name: Create git tag
-        if: needs.prepare.outputs.dry_run != 'true'
-        run: |
           git tag "v${{ steps.version.outputs.new_version }}"
-          git push origin "v${{ steps.version.outputs.new_version }}"
-
-      - name: Setup npm for publishing
-        if: needs.prepare.outputs.dry_run != 'true'
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: "https://registry.npmjs.org"
+          git push && git push origin "v${{ steps.version.outputs.new_version }}"
 
       - name: Publish to npm
-        if: needs.prepare.outputs.dry_run != 'true'
+        if: inputs.dry-run != true && steps.version.outputs.released == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
         run: |
@@ -233,7 +253,7 @@ jobs:
             echo "NPM_ACCESS_TOKEN not set, skipping npm publish"
             exit 0
           fi
-          CHANNEL="${{ needs.prepare.outputs.channel }}"
+          CHANNEL="${{ inputs.channel }}"
           if [ "$CHANNEL" = "latest" ] || [ "$CHANNEL" = "main" ]; then
             pnpm publish --access public --tag latest --no-git-checks
           else
@@ -245,10 +265,12 @@ jobs:
   # ==========================================================================
   build-docker:
     name: Build Docker Images
-    needs: [prepare, update-and-publish]
+    needs: release
     if: |
-      needs.prepare.outputs.skip_docker != 'true' &&
-      needs.prepare.outputs.dry_run != 'true'
+      needs.release.result == 'success' &&
+      needs.release.outputs.released == 'true' &&
+      inputs.skip-docker != true &&
+      inputs.dry-run != true
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -260,17 +282,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ needs.prepare.outputs.branch }}
+          ref: ${{ github.ref_name }}
 
       - name: Pull latest changes
-        run: git pull origin ${{ needs.prepare.outputs.branch }}
+        run: git pull origin ${{ github.ref_name }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       - name: Ensure Docker project exists
         run: |
-          PROJECT_NAME="${{ needs.prepare.outputs.project_name }}"
+          PROJECT_NAME="demo"
 
           # Check if project exists, create if not
           STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
@@ -278,7 +300,6 @@ jobs:
             "https://${{ env.DOCKER_REGISTRY }}/api/v2.0/projects?name=${PROJECT_NAME}")
 
           if [ "$STATUS" = "200" ]; then
-            # Check if the project is in the response
             EXISTS=$(curl -s \
               -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \
               "https://${{ env.DOCKER_REGISTRY }}/api/v2.0/projects?name=${PROJECT_NAME}" | \
@@ -326,9 +347,9 @@ jobs:
       - name: Determine image tags
         id: tags
         run: |
-          VERSION="${{ needs.update-and-publish.outputs.new_version }}"
-          CHANNEL="${{ needs.prepare.outputs.channel }}"
-          PROJECT="${{ needs.prepare.outputs.project_name }}"
+          VERSION="${{ needs.release.outputs.new_version }}"
+          CHANNEL="${{ inputs.channel }}"
+          PROJECT="demo"
           TARGET="${{ matrix.target }}"
 
           # GHCR tags
@@ -362,7 +383,7 @@ jobs:
           push: true
           tags: ${{ steps.tags.outputs.tags }}
           build-args: |
-            TAG=${{ needs.prepare.outputs.channel == 'latest' && 'latest' || needs.prepare.outputs.version }}
+            TAG=${{ inputs.channel == 'latest' && 'latest' || inputs.channel }}
             PACKAGE_NAME=${{ steps.package.outputs.name }}
             PH_CONNECT_BASE_PATH=/
           cache-from: type=gha
@@ -373,10 +394,13 @@ jobs:
   # ==========================================================================
   update-k8s:
     name: Update K8s Hosting
-    needs: [prepare, update-and-publish, build-docker]
+    needs: [release, build-docker]
     if: |
-      needs.prepare.outputs.dry_run != 'true' &&
-      (needs.prepare.outputs.channel == 'dev' || needs.prepare.outputs.channel == 'staging')
+      needs.release.result == 'success' &&
+      needs.release.outputs.released == 'true' &&
+      needs.build-docker.result == 'success' &&
+      inputs.dry-run != true &&
+      (inputs.channel == 'dev' || inputs.channel == 'staging')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout k8s-hosting repository
@@ -391,8 +415,8 @@ jobs:
 
       - name: Update image tags
         run: |
-          CHANNEL="${{ needs.prepare.outputs.channel }}"
-          VERSION="v${{ needs.update-and-publish.outputs.new_version }}"
+          CHANNEL="${{ inputs.channel }}"
+          VERSION="v${{ needs.release.outputs.new_version }}"
           VALUES_FILE="k8s-hosting/tenants/${CHANNEL}/powerhouse-values.yaml"
 
           echo "Updating ${VALUES_FILE} with version ${VERSION}"
@@ -412,8 +436,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          CHANNEL="${{ needs.prepare.outputs.channel }}"
-          VERSION="v${{ needs.update-and-publish.outputs.new_version }}"
+          CHANNEL="${{ inputs.channel }}"
+          VERSION="v${{ needs.release.outputs.new_version }}"
 
           git add "tenants/${CHANNEL}/powerhouse-values.yaml"
 
@@ -428,9 +452,9 @@ jobs:
   # Summary
   # ==========================================================================
   summary:
-    name: Release Summary
-    needs: [prepare, update-and-publish, build-docker, update-k8s]
-    if: always()
+    name: Summary
+    needs: [sync, release, build-docker, update-k8s]
+    if: always() && github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Summary
@@ -439,12 +463,21 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| Parameter | Value |" >> $GITHUB_STEP_SUMMARY
           echo "|-----------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Channel | ${{ needs.prepare.outputs.channel }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Branch | ${{ needs.prepare.outputs.branch }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Powerhouse Version | ${{ needs.prepare.outputs.version }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Package Version | ${{ needs.update-and-publish.outputs.new_version }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Dry Run | ${{ needs.prepare.outputs.dry_run }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Channel | ${{ inputs.channel }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Branch | ${{ github.ref_name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Sync | ${{ inputs.sync }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | ${{ needs.release.outputs.new_version }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Released | ${{ needs.release.outputs.released }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Dry Run | ${{ inputs.dry-run }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Docker Images" >> $GITHUB_STEP_SUMMARY
-          echo "- \`${{ env.DOCKER_REGISTRY }}/${{ needs.prepare.outputs.project_name }}/connect:v${{ needs.update-and-publish.outputs.new_version }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- \`${{ env.DOCKER_REGISTRY }}/${{ needs.prepare.outputs.project_name }}/switchboard:v${{ needs.update-and-publish.outputs.new_version }}\`" >> $GITHUB_STEP_SUMMARY
+
+          if [ -n "${{ inputs.powerhouse-version }}" ]; then
+            echo "| Powerhouse Version | ${{ inputs.powerhouse-version }} |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "${{ needs.release.outputs.released }}" = "true" ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Docker Images" >> $GITHUB_STEP_SUMMARY
+            echo "- \`${{ env.DOCKER_REGISTRY }}/demo/connect:v${{ needs.release.outputs.new_version }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "- \`${{ env.DOCKER_REGISTRY }}/demo/switchboard:v${{ needs.release.outputs.new_version }}\`" >> $GITHUB_STEP_SUMMARY
+          fi
