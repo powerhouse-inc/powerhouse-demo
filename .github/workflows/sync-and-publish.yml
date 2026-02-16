@@ -46,28 +46,33 @@ env:
 
 jobs:
   # ==========================================================================
-  # Fan out: dispatch per-branch runs (repository_dispatch only, latest only)
+  # Dispatch: route repository_dispatch to the correct branch
+  # (dev→dev, staging→staging, latest→main)
   # ==========================================================================
   dispatch:
-    name: Dispatch (${{ matrix.channel }})
-    if: github.event_name == 'repository_dispatch' && github.event.client_payload.channel == 'latest'
+    name: Dispatch
+    if: github.event_name == 'repository_dispatch'
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - branch: main
-            channel: latest
-          - branch: staging
-            channel: staging
-          - branch: dev
-            channel: dev
     steps:
-      - name: Trigger workflow on ${{ matrix.branch }}
+      - name: Determine target branch
+        id: target
+        run: |
+          CHANNEL="${{ github.event.client_payload.channel }}"
+          case "$CHANNEL" in
+            dev) BRANCH="dev" ;;
+            staging) BRANCH="staging" ;;
+            *) BRANCH="main" ;;
+          esac
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+          echo "channel=${CHANNEL:-latest}" >> $GITHUB_OUTPUT
+          echo "Routing channel=$CHANNEL to branch=$BRANCH"
+
+      - name: Trigger workflow on ${{ steps.target.outputs.branch }}
         run: |
           gh workflow run "Sync and Publish" \
             --repo "${{ github.repository }}" \
-            --ref "${{ matrix.branch }}" \
-            -f channel="${{ matrix.channel }}" \
+            --ref "${{ steps.target.outputs.branch }}" \
+            -f channel="${{ steps.target.outputs.channel }}" \
             -f sync=true \
             -f dry-run=false \
             -f skip-docker=false \
