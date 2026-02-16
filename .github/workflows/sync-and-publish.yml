@@ -109,12 +109,25 @@ jobs:
 
       - name: Update Powerhouse dependencies
         run: |
-          pnpm update --latest $(node -e "
+          CHANNEL="${{ inputs.channel }}"
+          # Map channel to npm dist-tag
+          case "$CHANNEL" in
+            dev) TAG="dev" ;;
+            staging) TAG="staging" ;;
+            *) TAG="latest" ;;
+          esac
+
+          PACKAGES=$(node -e "
             const pkg = require('./package.json');
             const deps = {...pkg.dependencies, ...pkg.devDependencies};
             const names = Object.keys(deps).filter(d => d.startsWith('@powerhousedao/') || ['document-model','document-drive','ph-cmd'].includes(d));
             console.log(names.join(' '));
           ")
+
+          echo "Updating packages to @$TAG: $PACKAGES"
+          for pkg in $PACKAGES; do
+            pnpm add "${pkg}@${TAG}" || echo "Warning: Failed to update $pkg"
+          done
 
       - name: Install dependencies
         run: pnpm install
