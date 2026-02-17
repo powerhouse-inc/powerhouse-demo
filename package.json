@@ -1,6 +1,6 @@
 {
   "name": "powerhouse-demo",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "license": "AGPL-3.0-only",
   "type": "module",
   "files": [
@@ -118,6 +118,5 @@
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
   },
-  "readme": "ERROR: No README data found!",
-  "_id": "powerhouse-demo@1.0.9"
+  "readme": "ERROR: No README data found!"
 }
