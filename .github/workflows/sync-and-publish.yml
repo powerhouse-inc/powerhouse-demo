@@ -3,7 +3,7 @@ name: Sync and Publish
 on:
   # Triggered by powerhouse monorepo after release
   repository_dispatch:
-    types: [powerhouse-release]
+    types: [powerhouse-release, dependency-release]
 
   # Manual trigger or dispatched per-branch
   workflow_dispatch:
@@ -37,6 +37,16 @@ on:
         required: false
         type: string
         default: ''
+      dep-package:
+        description: 'Downstream dependency package name (set by dependency-release)'
+        required: false
+        type: string
+        default: ''
+      dep-version:
+        description: 'Downstream dependency version (set by dependency-release)'
+        required: false
+        type: string
+        default: ''
 
 env:
   NODE_VERSION: '24'
@@ -57,7 +67,16 @@ jobs:
       - name: Determine target branch
         id: target
         run: |
+          EVENT_TYPE="${{ github.event.action }}"
           CHANNEL="${{ github.event.client_payload.channel }}"
+
+          if [ "$EVENT_TYPE" = "dependency-release" ]; then
+            DEP_PACKAGE="${{ github.event.client_payload.package }}"
+            DEP_VERSION="${{ github.event.client_payload.version }}"
+            echo "dep_package=$DEP_PACKAGE" >> $GITHUB_OUTPUT
+            echo "dep_version=$DEP_VERSION" >> $GITHUB_OUTPUT
+          fi
+
           case "$CHANNEL" in
             dev) BRANCH="dev" ;;
             staging) BRANCH="staging" ;;
@@ -69,6 +88,11 @@ jobs:
 
       - name: Trigger workflow on ${{ steps.target.outputs.branch }}
         run: |
+          EXTRA_ARGS=""
+          if [ -n "${{ steps.target.outputs.dep_package }}" ]; then
+            EXTRA_ARGS="-f dep-package=${{ steps.target.outputs.dep_package }} -f dep-version=${{ steps.target.outputs.dep_version }}"
+          fi
+
           gh workflow run "Sync and Publish" \
             --repo "${{ github.repository }}" \
             --ref "${{ steps.target.outputs.branch }}" \
@@ -76,7 +100,8 @@ jobs:
             -f sync=true \
             -f dry-run=false \
             -f skip-docker=false \
-            -f powerhouse-version="${{ github.event.client_payload.version }}"
+            -f powerhouse-version="${{ github.event.client_payload.powerhouse_version || github.event.client_payload.version }}" \
+            $EXTRA_ARGS
         env:
           GH_TOKEN: ${{ secrets.K8S_REPO_PAT }}
 
@@ -122,10 +147,17 @@ jobs:
             *) TAG="latest" ;;
           esac
 
+          # Downstream packages that have their own release cycle
+          EXCLUDE="@powerhousedao/clicker-game"
+
           PACKAGES=$(node -e "
             const pkg = require('./package.json');
             const deps = {...pkg.dependencies, ...pkg.devDependencies};
-            const names = Object.keys(deps).filter(d => d.startsWith('@powerhousedao/') || ['document-model','document-drive','ph-cmd'].includes(d));
+            const exclude = '${EXCLUDE}'.split(' ').filter(Boolean);
+            const names = Object.keys(deps).filter(d =>
+              !exclude.includes(d) &&
+              (d.startsWith('@powerhousedao/') || ['document-model','document-drive','ph-cmd'].includes(d))
+            );
             console.log(names.join(' '));
           ")
 
@@ -133,6 +165,12 @@ jobs:
           for pkg in $PACKAGES; do
             pnpm add "${pkg}@${TAG}" || echo "Warning: Failed to update $pkg"
           done
+
+      - name: Update downstream dependency
+        if: inputs.dep-package != '' && inputs.dep-version != ''
+        run: |
+          echo "Updating downstream dependency ${{ inputs.dep-package }}@${{ inputs.dep-version }}"
+          pnpm add "${{ inputs.dep-package }}@${{ inputs.dep-version }}"
 
       - name: Install dependencies
         run: pnpm install
@@ -418,7 +456,7 @@ jobs:
       needs.release.outputs.released == 'true' &&
       needs.build-docker.result == 'success' &&
       inputs.dry-run != true &&
-      (inputs.channel == 'dev' || inputs.channel == 'staging')
+      (inputs.channel == 'dev' || inputs.channel == 'staging' || inputs.channel == 'latest')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout k8s-hosting repository
@@ -435,7 +473,16 @@ jobs:
         run: |
           CHANNEL="${{ inputs.channel }}"
           VERSION="v${{ needs.release.outputs.new_version }}"
-          VALUES_FILE="k8s-hosting/tenants/${CHANNEL}/powerhouse-values.yaml"
+
+          # Map channel to tenant directory
+          case "$CHANNEL" in
+            dev) TENANT="dev" ;;
+            staging) TENANT="staging" ;;
+            latest) TENANT="demo" ;;
+            *) TENANT="$CHANNEL" ;;
+          esac
+
+          VALUES_FILE="k8s-hosting/tenants/${TENANT}/powerhouse-values.yaml"
 
           echo "Updating ${VALUES_FILE} with version ${VERSION}"
 
@@ -457,12 +504,20 @@ jobs:
           CHANNEL="${{ inputs.channel }}"
           VERSION="v${{ needs.release.outputs.new_version }}"
 
-          git add "tenants/${CHANNEL}/powerhouse-values.yaml"
+          # Map channel to tenant directory
+          case "$CHANNEL" in
+            dev) TENANT="dev" ;;
+            staging) TENANT="staging" ;;
+            latest) TENANT="demo" ;;
+            *) TENANT="$CHANNEL" ;;
+          esac
+
+          git add "tenants/${TENANT}/powerhouse-values.yaml"
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore(${CHANNEL}): update image tags to ${VERSION}"
+            git commit -m "chore(${TENANT}): update image tags to ${VERSION}"
             git push
           fi
 

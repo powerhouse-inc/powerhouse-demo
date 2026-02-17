@@ -67,6 +67,7 @@
     "@powerhousedao/common": "6.0.0-dev.50",
     "@powerhousedao/design-system": "6.0.0-dev.50",
     "@powerhousedao/document-engineering": "1.40.1",
+    "@powerhousedao/clicker-game": "0.0.1-dev",
     "@powerhousedao/vetra": "6.0.0-dev.50",
     "document-model": "6.0.0-dev.50",
     "graphql": "^16.10.0",

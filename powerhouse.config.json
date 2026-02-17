@@ -11,12 +11,14 @@
     "port": 4001
   },
   "packages": [
-    
-{
-  "packageName": "@powerhousedao/vetra",
-  "version": "5.3.0-staging.14",
-  "provider": "npm"
-}
-
+    {
+      "packageName": "@powerhousedao/vetra",
+      "version": "5.3.0-staging.14",
+      "provider": "npm"
+    },
+    {
+      "packageName": "@powerhousedao/clicker-game",
+      "provider": "npm"
+    }
   ]
 }
