@@ -60,7 +60,8 @@ FROM base AS connect-builder
 
 ARG PH_CONNECT_BASE_PATH="/"
 
-# Build connect
+# Build connect (increase memory for large bundles with multiple packages)
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 RUN pnpm run connect build --base ${PH_CONNECT_BASE_PATH}
 
 # -----------------------------------------------------------------------------
