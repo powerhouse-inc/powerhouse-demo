@@ -418,7 +418,7 @@ jobs:
       needs.release.outputs.released == 'true' &&
       needs.build-docker.result == 'success' &&
       inputs.dry-run != true &&
-      (inputs.channel == 'dev' || inputs.channel == 'staging')
+      (inputs.channel == 'dev' || inputs.channel == 'staging' || inputs.channel == 'latest')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout k8s-hosting repository
@@ -435,7 +435,16 @@ jobs:
         run: |
           CHANNEL="${{ inputs.channel }}"
           VERSION="v${{ needs.release.outputs.new_version }}"
-          VALUES_FILE="k8s-hosting/tenants/${CHANNEL}/powerhouse-values.yaml"
+
+          # Map channel to tenant directory
+          case "$CHANNEL" in
+            dev) TENANT="dev" ;;
+            staging) TENANT="staging" ;;
+            latest) TENANT="demo" ;;
+            *) TENANT="$CHANNEL" ;;
+          esac
+
+          VALUES_FILE="k8s-hosting/tenants/${TENANT}/powerhouse-values.yaml"
 
           echo "Updating ${VALUES_FILE} with version ${VERSION}"
 
@@ -457,12 +466,20 @@ jobs:
           CHANNEL="${{ inputs.channel }}"
           VERSION="v${{ needs.release.outputs.new_version }}"
 
-          git add "tenants/${CHANNEL}/powerhouse-values.yaml"
+          # Map channel to tenant directory
+          case "$CHANNEL" in
+            dev) TENANT="dev" ;;
+            staging) TENANT="staging" ;;
+            latest) TENANT="demo" ;;
+            *) TENANT="$CHANNEL" ;;
+          esac
+
+          git add "tenants/${TENANT}/powerhouse-values.yaml"
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore(${CHANNEL}): update image tags to ${VERSION}"
+            git commit -m "chore(${TENANT}): update image tags to ${VERSION}"
             git push
           fi
 
