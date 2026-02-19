@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@powerhousedao/builder-tools": "5.3.3",
-    "@powerhousedao/chatroom-package": "1.0.1",
+    "@powerhousedao/chatroom-package": "1.0.2",
     "@powerhousedao/common": "5.3.3",
     "@powerhousedao/contributor-billing": "1.0.2",
     "@powerhousedao/design-system": "5.3.3",
@@ -81,7 +81,7 @@
   "devDependencies": {
     "@electric-sql/pglite": "^0.2.12",
     "@eslint/js": "^9.38.0",
-    "@powerhousedao/analytics-engine-core": "^0.5.0",
+    "@powerhousedao/analytics-engine-core": "^0.6.4",
     "@powerhousedao/codegen": "5.3.3",
     "@powerhousedao/config": "5.3.3",
     "@powerhousedao/connect": "5.3.3",
