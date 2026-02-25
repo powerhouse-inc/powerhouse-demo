@@ -1,9 +1,9 @@
 name: Sync and Publish
 
 on:
-  # Triggered by powerhouse monorepo after release
+  # Triggered by powerhouse monorepo or downstream packages after release
   repository_dispatch:
-    types: [powerhouse-release]
+    types: [powerhouse-release, dependency-release]
 
   # Manual trigger or dispatched per-branch
   workflow_dispatch:
@@ -37,6 +37,16 @@ on:
         required: false
         type: string
         default: ''
+      dep-package:
+        description: 'Downstream dependency package name (set by dispatch)'
+        required: false
+        type: string
+        default: ''
+      dep-version:
+        description: 'Downstream dependency version (set by dispatch)'
+        required: false
+        type: string
+        default: ''
 
 env:
   NODE_VERSION: '24'
@@ -54,18 +64,34 @@ jobs:
     if: github.event_name == 'repository_dispatch'
     runs-on: ubuntu-latest
     steps:
-      - name: Determine target branch
+      - name: Determine target branch and inputs
         id: target
         run: |
+          EVENT_TYPE="${{ github.event.action }}"
           CHANNEL="${{ github.event.client_payload.channel }}"
-          case "$CHANNEL" in
-            dev) BRANCH="dev" ;;
-            staging) BRANCH="staging" ;;
-            *) BRANCH="main" ;;
-          esac
+          DEP_PACKAGE=""
+          DEP_VERSION=""
+
+          if [ "$EVENT_TYPE" = "dependency-release" ]; then
+            # Downstream package release — always route to main/latest
+            DEP_PACKAGE="${{ github.event.client_payload.package }}"
+            DEP_VERSION="${{ github.event.client_payload.version }}"
+            CHANNEL="latest"
+            BRANCH="main"
+          else
+            # Powerhouse monorepo release — route by channel
+            case "$CHANNEL" in
+              dev) BRANCH="dev" ;;
+              staging) BRANCH="staging" ;;
+              *) BRANCH="main" ;;
+            esac
+          fi
+
           echo "branch=$BRANCH" >> $GITHUB_OUTPUT
           echo "channel=${CHANNEL:-latest}" >> $GITHUB_OUTPUT
-          echo "Routing channel=$CHANNEL to branch=$BRANCH"
+          echo "dep_package=$DEP_PACKAGE" >> $GITHUB_OUTPUT
+          echo "dep_version=$DEP_VERSION" >> $GITHUB_OUTPUT
+          echo "Routing event=$EVENT_TYPE channel=$CHANNEL to branch=$BRANCH dep=$DEP_PACKAGE@$DEP_VERSION"
 
       - name: Trigger workflow on ${{ steps.target.outputs.branch }}
         run: |
@@ -76,7 +102,9 @@ jobs:
             -f sync=true \
             -f dry-run=false \
             -f skip-docker=false \
-            -f powerhouse-version="${{ github.event.client_payload.version }}"
+            -f powerhouse-version="${{ github.event.client_payload.version }}" \
+            -f dep-package="${{ steps.target.outputs.dep_package }}" \
+            -f dep-version="${{ steps.target.outputs.dep_version }}"
         env:
           GH_TOKEN: ${{ secrets.K8S_REPO_PAT }}
 
@@ -122,10 +150,17 @@ jobs:
             *) TAG="latest" ;;
           esac
 
+          # Downstream packages to exclude from powerhouse dep sync
+          EXCLUDE="@powerhousedao/contributor-billing @powerhousedao/chatroom-package @powerhousedao/notes-demo-package @powerhousedao/todo-demo"
+
           PACKAGES=$(node -e "
             const pkg = require('./package.json');
             const deps = {...pkg.dependencies, ...pkg.devDependencies};
-            const names = Object.keys(deps).filter(d => d.startsWith('@powerhousedao/') || ['document-model','document-drive','ph-cmd'].includes(d));
+            const exclude = '${EXCLUDE}'.split(' ');
+            const names = Object.keys(deps).filter(d =>
+              (d.startsWith('@powerhousedao/') || ['document-model','document-drive','ph-cmd'].includes(d))
+              && !exclude.includes(d)
+            );
             console.log(names.join(' '));
           ")
 
@@ -133,6 +168,14 @@ jobs:
           for pkg in $PACKAGES; do
             pnpm add "${pkg}@${TAG}" || echo "Warning: Failed to update $pkg"
           done
+
+      - name: Update downstream dependency
+        if: inputs.dep-package != '' && inputs.dep-version != ''
+        run: |
+          PACKAGE="${{ inputs.dep-package }}"
+          VERSION="${{ inputs.dep-version }}"
+          echo "Updating downstream dependency $PACKAGE to $VERSION"
+          pnpm add "${PACKAGE}@${VERSION}" || { echo "Failed to update $PACKAGE"; exit 1; }
 
       - name: Install dependencies
         run: pnpm install
@@ -159,12 +202,25 @@ jobs:
         run: |
           git add package.json pnpm-lock.yaml
           git add -A document-models/*/gen/ editors/*/gen/ || true
+
+          MSG="chore: sync dependencies"
+          DETAILS=""
           PH_VERSION="${{ inputs.powerhouse-version }}"
+          DEP_PKG="${{ inputs.dep-package }}"
+          DEP_VER="${{ inputs.dep-version }}"
+
           if [ -n "$PH_VERSION" ]; then
-            git commit -m "chore: sync powerhouse dependencies to $PH_VERSION"
-          else
-            git commit -m "chore: sync powerhouse dependencies"
+            DETAILS="powerhouse $PH_VERSION"
           fi
+          if [ -n "$DEP_PKG" ]; then
+            DEP="${DEP_PKG}@${DEP_VER}"
+            DETAILS="${DETAILS:+$DETAILS, }$DEP"
+          fi
+          if [ -n "$DETAILS" ]; then
+            MSG="$MSG ($DETAILS)"
+          fi
+
+          git commit -m "$MSG"
 
       - name: Push changes
         if: steps.changes.outputs.has_changes == 'true' && inputs.dry-run != true
@@ -508,6 +564,10 @@ jobs:
 
           if [ -n "${{ inputs.powerhouse-version }}" ]; then
             echo "| Powerhouse Version | ${{ inputs.powerhouse-version }} |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ -n "${{ inputs.dep-package }}" ]; then
+            echo "| Dep Package | ${{ inputs.dep-package }}@${{ inputs.dep-version }} |" >> $GITHUB_STEP_SUMMARY
           fi
 
           if [ "${{ needs.release.outputs.released }}" = "true" ]; then
