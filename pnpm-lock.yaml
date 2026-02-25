@@ -9,23 +9,23 @@ importers:
   .:
     dependencies:
       '@powerhousedao/builder-tools':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(@types/node@24.10.9)(encoding@0.1.13)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
       '@powerhousedao/common':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       '@powerhousedao/design-system':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
       '@powerhousedao/document-engineering':
         specifier: 1.40.1
         version: 1.40.1(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
       '@powerhousedao/vetra':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(22d15f194e57afe04cbe1b4451b19644)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(f6cdeeb4b61e9b2501e00d34bccf89a6)
       document-model:
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2
       graphql:
         specifier: ^16.10.0
         version: 16.12.0
@@ -33,8 +33,8 @@ importers:
         specifier: ^2.12.6
         version: 2.12.6(graphql@16.12.0)
       ph-cmd:
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2
       zod:
         specifier: ^4.3.5
         version: 4.3.6
@@ -49,32 +49,32 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       '@powerhousedao/codegen':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(@parcel/watcher@2.5.6)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(@parcel/watcher@2.5.6)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       '@powerhousedao/config':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2
       '@powerhousedao/connect':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(2328a3056d22740419879a7f68a7d20a)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(b252f85a4c749d4bca5ebcf1cc77fb6f)
       '@powerhousedao/ph-cli':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(document-model@6.0.0-staging.1)(encoding@0.1.13)(graphql@16.12.0)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(document-model@6.0.0-staging.2)(encoding@0.1.13)(graphql@16.12.0)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)
       '@powerhousedao/reactor-api':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
       '@powerhousedao/reactor-browser':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       '@powerhousedao/reactor-local':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(@azure/core-client@1.10.1)(@openfeature/core@1.9.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(@azure/core-client@1.10.1)(@openfeature/core@1.9.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
       '@powerhousedao/scalars':
         specifier: 1.33.1-staging.5
         version: 1.33.1-staging.5(graphql@16.12.0)(zod@4.3.6)
       '@powerhousedao/switchboard':
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)
       '@tailwindcss/cli':
         specifier: ^4.1.4
         version: 4.1.18
@@ -91,8 +91,8 @@ importers:
         specifier: ^5.1.0
         version: 5.1.2(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       document-drive:
-        specifier: 6.0.0-staging.1
-        version: 6.0.0-staging.1(pg@8.18.0)
+        specifier: 6.0.0-staging.2
+        version: 6.0.0-staging.2(pg@8.18.0)
       eslint:
         specifier: ^9.38.0
         version: 9.39.2(jiti@2.6.1)
@@ -2771,30 +2771,30 @@ packages:
   '@powerhousedao/analytics-engine-pg@0.6.4':
     resolution: {integrity: sha512-RULIwIKVsdL8VqnzjxgAhFQhxOLuGI8+walojZv6f5a44lyhRoxINp2uGXd9Jbh1j01QxHGh/ii0YvHBfUF9yQ==}
 
-  '@powerhousedao/builder-tools@6.0.0-staging.1':
-    resolution: {integrity: sha512-1Bf/i642piGeRiiK+TO1sT+/ZScSg9ssCLM+yevNze2MF7lHlBUiFrrabgBajhXAzIX2UAjrjpQcF1XqgGvCTQ==}
+  '@powerhousedao/builder-tools@6.0.0-staging.2':
+    resolution: {integrity: sha512-MTd8BFYp1i0awWm0w7EwoeCuMsxs3VVYH/jlqRkhsopOEIytg7rBOAiX0sxl8SaiQq7WULAzeWdQv8atbywWog==}
     peerDependencies:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
 
-  '@powerhousedao/codegen@6.0.0-staging.1':
-    resolution: {integrity: sha512-BtE/tAuutyfWw5VXTjfZIvm12BRTVuyWkQBYxM7wBXtZniZrRvSHnFNewuivlzL0utKm7xMhBPD8u+yOGlsIgA==}
+  '@powerhousedao/codegen@6.0.0-staging.2':
+    resolution: {integrity: sha512-XGBGRVN7pNJDYsqd+tAeTbg18zoYJbX8HPHm0qmW/rjBnapVrZhFg8Dm9ankWJzw4fgR8BbtdEUPXxsXJKbk/Q==}
 
-  '@powerhousedao/common@6.0.0-staging.1':
-    resolution: {integrity: sha512-yKsmp5knQD0PN/q7d3rueadXaMHU3zxjSqOdWLzXz+ki43o+erO19oCiN2rJJy651w+kWwQtOlGl7mTGUm2Mlg==}
+  '@powerhousedao/common@6.0.0-staging.2':
+    resolution: {integrity: sha512-9dQILyIxtgHgypTM0UhFydEqN6SrcRNL7In2RiKWMnSoRSwekctuSwF1PeJLc+3rzD8KZ3zZ4+8OcCNjAKBZLA==}
     peerDependencies:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
 
-  '@powerhousedao/config@6.0.0-staging.1':
-    resolution: {integrity: sha512-SHE5Q6pfJ0f4fb2RXf9H1V6r4cTJwvCaJuId2f2Ddl49a7hfM8bqwQrdLrxSJnoKZaO/PfQ5F2r0uN7/FEATOQ==}
+  '@powerhousedao/config@6.0.0-staging.2':
+    resolution: {integrity: sha512-psScY5SAbCatySVI36Sh7xN0S6qYQQqHMUC9yo+3dPikJW8CT1T4ZNJQLGO8aRRgrqhEYkap97jd7bhiY+YbVQ==}
 
-  '@powerhousedao/connect@6.0.0-staging.1':
-    resolution: {integrity: sha512-Btf6mgloyaWFrgnzsCPUSCAvmcGVRk6wEILVb1gJM4Zsr/8u2aqCMAm3XCcdoIGE/B6CKWegNecBua3aix1k7Q==}
+  '@powerhousedao/connect@6.0.0-staging.2':
+    resolution: {integrity: sha512-Xz7Wc2lzMce73fSqGN4oe+N1X3RMMaeZyMrSPw5vbzGqFQdc1EBBbLfLAf+vzM6pTkv8tL3md0xalNo82hK8CA==}
     engines: {node: '>=24.0.0'}
 
-  '@powerhousedao/design-system@6.0.0-staging.1':
-    resolution: {integrity: sha512-bspw6f51FwOvexCXyKyHycfcGRklBez3bhE3uotOcUif7PIv2wTK5cTwI4A4dRFUrsrIZui1psWnIxHGZLYlKg==}
+  '@powerhousedao/design-system@6.0.0-staging.2':
+    resolution: {integrity: sha512-qY17qkl/qo2bKP3cI7/47NmvlVsSq3ywS+Zg5Znp/3eufAixClbq7I9XF38ehUIhMcBIie7+MMWsVWbxoyH//g==}
     peerDependencies:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
@@ -2805,35 +2805,35 @@ packages:
       react: ^19.2.0
       react-dom: ^19.2.0
 
-  '@powerhousedao/ph-cli@6.0.0-staging.1':
-    resolution: {integrity: sha512-1rS5uSTx6IoKEhGghXLBsQU37CGMNQrwyFjb0PFmyc2ZdbR/T4f52QeQFLGKFZP2+JvbRuaVVCocyAn2qbZL7Q==}
+  '@powerhousedao/ph-cli@6.0.0-staging.2':
+    resolution: {integrity: sha512-dn4nTMznHgn1DirzeYCahXJed9UFA9BNU93th7pa0WdjPL5b9F3hbqR4AOON3mGH7PYvBIcaHUjQlcQhN4S8yQ==}
     engines: {node: '>=24.0.0'}
     hasBin: true
 
-  '@powerhousedao/powerhouse-vetra-packages@6.0.0-staging.1':
-    resolution: {integrity: sha512-FXxavygOPnn3ZczXfjvJE80qt75B7NJp6SyLfTHfE+/sa80noUp1K6inSH0EK2PxhsipoliphEg119RK2FtGIQ==}
+  '@powerhousedao/powerhouse-vetra-packages@6.0.0-staging.2':
+    resolution: {integrity: sha512-4JqBOW9hV+rQ95i2qjL3xZiLOcRySFWq+bBpRbA6ANAUV7HDU1rCrhRkTj6tEaosE5YDyB+Ce+ocjY1e4DrNNw==}
     peerDependencies:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
 
-  '@powerhousedao/reactor-api@6.0.0-staging.1':
-    resolution: {integrity: sha512-CLzMYy3pguCfqu1TOQHvdqJQ5xaeEoj++odVBZym9arx91sfUyU3uNqLDP9eRU0+1RyfPmFpVhXx5cigvM3tkQ==}
+  '@powerhousedao/reactor-api@6.0.0-staging.2':
+    resolution: {integrity: sha512-2iRXc0lU+vTWXXYhSF9ZFnx1mxbg6S/TcgW+1GJ2JLm7BKSWG+RrVgvyoYQD3V5n98pDaWq9xi9TrU7QYvgWNA==}
 
-  '@powerhousedao/reactor-browser@6.0.0-staging.1':
-    resolution: {integrity: sha512-BBwctoSaz2+XMiDVIvR1wrHTF6fmYqNfjw3M9PwRe0GE4v48LpYkUl7QHVOrlHV/dSnobAO9Dt0tBl0ZWbGJ2g==}
+  '@powerhousedao/reactor-browser@6.0.0-staging.2':
+    resolution: {integrity: sha512-lc5UuK5ezoZyoE8BW77Mezh7pu2UQ+ZOlSLFXTx1r2lSjiDgKCsPs5pqg6y41Q1jeEQxB4wijHK//B3e0/SztA==}
     peerDependencies:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
 
-  '@powerhousedao/reactor-local@6.0.0-staging.1':
-    resolution: {integrity: sha512-RFTXTqOGtvs6sgSxO7NvxyMAgqp9jULwZk3HJDTyzHTkfoT4SAXexVqq6XGEFaxBXDtYTGX8hzAVXnKB9lnMSg==}
+  '@powerhousedao/reactor-local@6.0.0-staging.2':
+    resolution: {integrity: sha512-JluRIFMRhH4d6kuSg3ilpcUKrgS4px7E5kQx8GLVA5/HHBUF4D9eHOj/Ndz4S4LWQO43caJv08glQd6a3vALHg==}
 
-  '@powerhousedao/reactor-mcp@6.0.0-staging.1':
-    resolution: {integrity: sha512-Vw7MlvTS/X2G1p6g87yswv8ZtC8S2JLCdoVHv19TJAykkIyVDOVrUrBd2sD/QMx6wmELWJrTUHFYRazxDdyVVQ==}
+  '@powerhousedao/reactor-mcp@6.0.0-staging.2':
+    resolution: {integrity: sha512-iz6od/TLBjdwZrVzsz9QutefIhoH+tzTf4HvBHTRgY3WpefV3T5VXNro65gn+y8WeYP1dvfSNeoiqnsobIrJ+A==}
     hasBin: true
 
-  '@powerhousedao/reactor@6.0.0-staging.1':
-    resolution: {integrity: sha512-rB4jquHT2Eg8m8JiCC/pUjk8xMefkOQZBUY1qJbw2OlU8IXOf60YJfRU1Hyjs2dYGqi9FD1olr2jldTmfT9kng==}
+  '@powerhousedao/reactor@6.0.0-staging.2':
+    resolution: {integrity: sha512-h5JnKuonpmYve2RTGb6CMFs9Lw1dTspgTiw1lxhr0gDaCVykhWoUvyxRox7ZOkGqWWr0EV53Kqxw1bD0f647gg==}
 
   '@powerhousedao/scalars@1.33.1-staging.5':
     resolution: {integrity: sha512-3Tt5HfQuLm/+YwpDkD6LeMN3ig+fzKGfxFNANhFGJVrVWzRLySNBULkCIneTq3cDg+XOjwysrBNYXMK+JQCJ4A==}
@@ -2841,16 +2841,16 @@ packages:
       graphql: ^16.9.0
       zod: ^3.24.2
 
-  '@powerhousedao/shared@6.0.0-staging.1':
-    resolution: {integrity: sha512-yc/R+bMRcfOmfFmz5RuIrtZCqcSUM7BRA/uo/ywYGwGqNB/32W5scYKJZPwzJtA9pzvLQ4s9CrtuxGZ+AvHdyg==}
+  '@powerhousedao/shared@6.0.0-staging.2':
+    resolution: {integrity: sha512-hL77gtn/yMFFl4ngH12v4rq4py7IZ36MMTaUPf15mXBoXm4DmZg+P5fqAXDjRqrghT5NX4WctwMKOTKJs7k7sw==}
 
-  '@powerhousedao/switchboard@6.0.0-staging.1':
-    resolution: {integrity: sha512-/OSqQwE3h5UM/kmFov7nYI2TA5oTB3sGqoMT4qYs8ctPOVnp0VSoH33XKENSH+lLSX9QKRZJi7WkC4EKcaTA5w==}
+  '@powerhousedao/switchboard@6.0.0-staging.2':
+    resolution: {integrity: sha512-h7vvpVMzbQ+bmvvhTdxubcbz7r15Bh2QlZoH3IBpu/SlMpP3GikAmdA0U6fKdotHZ63k3a7b07byawibeZyvJg==}
     engines: {node: '>=24.0.0'}
     hasBin: true
 
-  '@powerhousedao/vetra@6.0.0-staging.1':
-    resolution: {integrity: sha512-LBw9p/2PM2XHRnjyy/qs3r8ex3X+Jw0B3AlolEE7x7xPLV7NeZbRgCg7LhAhOSITWVdzUg0rDjBFtJQndGZeQg==}
+  '@powerhousedao/vetra@6.0.0-staging.2':
+    resolution: {integrity: sha512-sFZuG3sFQHMEvsKNRjmKbT5hU9ye0INxfBEd9+UXtuHARM/fNsWnYIdECUkczQ5vA6GNHBR8uagY5S8/DFU7jg==}
     peerDependencies:
       react: '>=19.0.0'
       react-dom: '>=19.0.0'
@@ -3490,11 +3490,11 @@ packages:
     resolution: {integrity: sha512-Ic6m2U/rMjTkhERIa/0ZtXJP17QUi2CbWE7cqx4J58M8aA3QTfW+2UlQ4psvTX9IO1RfNVhK3pcpdjej7L+t2w==}
     engines: {node: '>=14.0.0'}
 
-  '@renown/sdk@6.0.0-staging.1':
-    resolution: {integrity: sha512-ythQ9N1x9VD8ir0GQI/Hue7+RXrjmKwZGe50mRBWmxUO1JnfjEQx3LJA7/17q5eJdSqnS6D61wJnp1dvd1yP2g==}
+  '@renown/sdk@6.0.0-staging.2':
+    resolution: {integrity: sha512-eBUb6/4e79wA2vXpyEc8p1W6gXYXIU2oaMLGP8gDFpDhZXA80Ty2dV+f0Z9EVx3IwD6uIOhZGpO04QdhK0ziTQ==}
     peerDependencies:
-      '@powerhousedao/reactor': 6.0.0-staging.1
-      document-model: 6.0.0-staging.1
+      '@powerhousedao/reactor': 6.0.0-staging.2
+      document-model: 6.0.0-staging.2
       react: 19.2.4
     peerDependenciesMeta:
       react:
@@ -3546,6 +3546,10 @@ packages:
     peerDependenciesMeta:
       rollup:
         optional: true
+
+  '@rollup/pluginutils@4.2.1':
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
+    engines: {node: '>= 8.0.0'}
 
   '@rollup/pluginutils@5.3.0':
     resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
@@ -3753,9 +3757,69 @@ packages:
     resolution: {integrity: sha512-snuk12ZaDerxesSnetNIwKoth/51R0y/h3eXD/bGtXp+hnSkeXN5HanI/RJl297llRjn4zJYRShW9Nx86Ay0Dw==}
     engines: {node: '>=18'}
 
+  '@sentry/babel-plugin-component-annotate@4.9.1':
+    resolution: {integrity: sha512-0gEoi2Lb54MFYPOmdTfxlNKxI7kCOvNV7gP8lxMXJ7nCazF5OqOOZIVshfWjDLrc0QrSV6XdVvwPV9GDn4wBMg==}
+    engines: {node: '>= 14'}
+
   '@sentry/browser@10.37.0':
     resolution: {integrity: sha512-kheqJNqGZP5TSBCPv4Vienv1sfZwXKHQDYR+xrdHHYdZqwWuZMJJW/cLO9XjYAe+B9NnJ4UwJOoY4fPvU+HQ1Q==}
     engines: {node: '>=18'}
+
+  '@sentry/bundler-plugin-core@4.9.1':
+    resolution: {integrity: sha512-moii+w7N8k8WdvkX7qCDY9iRBlhgHlhTHTUQwF2FNMhBHuqlNpVcSJJqJMjFUQcjYMBDrZgxhfKV18bt5ixwlQ==}
+    engines: {node: '>= 14'}
+
+  '@sentry/cli-darwin@2.58.5':
+    resolution: {integrity: sha512-lYrNzenZFJftfwSya7gwrHGxtE+Kob/e1sr9lmHMFOd4utDlmq0XFDllmdZAMf21fxcPRI1GL28ejZ3bId01fQ==}
+    engines: {node: '>=10'}
+    os: [darwin]
+
+  '@sentry/cli-linux-arm64@2.58.5':
+    resolution: {integrity: sha512-/4gywFeBqRB6tR/iGMRAJ3HRqY6Z7Yp4l8ZCbl0TDLAfHNxu7schEw4tSnm2/Hh9eNMiOVy4z58uzAWlZXAYBQ==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [linux, freebsd, android]
+
+  '@sentry/cli-linux-arm@2.58.5':
+    resolution: {integrity: sha512-KtHweSIomYL4WVDrBrYSYJricKAAzxUgX86kc6OnlikbyOhoK6Fy8Vs6vwd52P6dvWPjgrMpUYjW2M5pYXQDUw==}
+    engines: {node: '>=10'}
+    cpu: [arm]
+    os: [linux, freebsd, android]
+
+  '@sentry/cli-linux-i686@2.58.5':
+    resolution: {integrity: sha512-G7261dkmyxqlMdyvyP06b+RTIVzp1gZNgglj5UksxSouSUqRd/46W/2pQeOMPhloDYo9yLtCN2YFb3Mw4aUsWw==}
+    engines: {node: '>=10'}
+    cpu: [x86, ia32]
+    os: [linux, freebsd, android]
+
+  '@sentry/cli-linux-x64@2.58.5':
+    resolution: {integrity: sha512-rP04494RSmt86xChkQ+ecBNRYSPbyXc4u0IA7R7N1pSLCyO74e5w5Al+LnAq35cMfVbZgz5Sm0iGLjyiUu4I1g==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [linux, freebsd, android]
+
+  '@sentry/cli-win32-arm64@2.58.5':
+    resolution: {integrity: sha512-AOJ2nCXlQL1KBaCzv38m3i2VmSHNurUpm7xVKd6yAHX+ZoVBI8VT0EgvwmtJR2TY2N2hNCC7UrgRmdUsQ152bA==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@sentry/cli-win32-i686@2.58.5':
+    resolution: {integrity: sha512-EsuboLSOnlrN7MMPJ1eFvfMDm+BnzOaSWl8eYhNo8W/BIrmNgpRUdBwnWn9Q2UOjJj5ZopukmsiMYtU/D7ml9g==}
+    engines: {node: '>=10'}
+    cpu: [x86, ia32]
+    os: [win32]
+
+  '@sentry/cli-win32-x64@2.58.5':
+    resolution: {integrity: sha512-IZf+XIMiQwj+5NzqbOQfywlOitmCV424Vtf9c+ep61AaVScUFD1TSrQbOcJJv5xGxhlxNOMNgMeZhdexdzrKZg==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [win32]
+
+  '@sentry/cli@2.58.5':
+    resolution: {integrity: sha512-tavJ7yGUZV+z3Ct2/ZB6mg339i08sAk6HDkgqmSRuQEu2iLS5sl9HIvuXfM6xjv8fwlgFOSy++WNABNAcGHUbg==}
+    engines: {node: '>= 10'}
+    hasBin: true
 
   '@sentry/core@10.37.0':
     resolution: {integrity: sha512-hkRz7S4gkKLgPf+p3XgVjVm7tAfvcEPZxeACCC6jmoeKhGkzN44nXwLiqqshJ25RMcSrhfFvJa/FlBg6zupz7g==}
@@ -3796,6 +3860,10 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       react: ^16.14.0 || 17.x || 18.x || 19.x
+
+  '@sentry/vite-plugin@4.9.1':
+    resolution: {integrity: sha512-Tlyg2cyFYp/icX58GWvfpvZr9NLdLs2/xyFVyS8pQ0faZWmoXic3FMzoXYHV1gsdMbL1Yy5WQvGJy8j1rS8LGA==}
+    engines: {node: '>= 14'}
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -3994,6 +4062,11 @@ packages:
   '@tailwindcss/oxide@4.1.18':
     resolution: {integrity: sha512-EgCR5tTS5bUSKQgzeMClT6iCY3ToqE1y+ZB0AKldj809QXk1Y+3jB0upOYZrn9aGIzPtUsP7sX4QQ4XtjBB95A==}
     engines: {node: '>= 10'}
+
+  '@tailwindcss/vite@4.1.18':
+    resolution: {integrity: sha512-jVA+/UpKL1vRLg6Hkao5jldawNmRo7mQYrZtNHMIVpLfLhDml5nMRUo/8MwoX2vNXvnaXNNMedrMfMugAVX1nA==}
+    peerDependencies:
+      vite: ^5.2.0 || ^6 || ^7
 
   '@tanstack/query-core@5.90.20':
     resolution: {integrity: sha512-OMD2HLpNouXEfZJWcKeVKUgQ5n+n3A2JFmBaScpNDUqSrQSjiveC7dKMe53uJUg1nDG16ttFPz2xfilz6i2uVg==}
@@ -4921,6 +4994,9 @@ packages:
     resolution: {integrity: sha512-oP5VkATKlNwcgvxi0vM0p/D3n2C3EReYVX+DNYs5TjZFn/oQt2j+4sVJtSMr18pdRr8wjTcBl6LoV+FUwzPmNA==}
     engines: {node: '>=18'}
 
+  boolbase@1.0.0:
+    resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
+
   bowser@2.13.1:
     resolution: {integrity: sha512-OHawaAbjwx6rqICCKgSG0SAnT05bzd7ppyKLVUITZpANBaaMFBAsaNkto3LoQ31tyFP5kNujE8Cdx85G9VzOkw==}
 
@@ -5169,6 +5245,10 @@ packages:
   class-variance-authority@0.7.1:
     resolution: {integrity: sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==}
 
+  clean-css@5.3.3:
+    resolution: {integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg==}
+    engines: {node: '>= 10.0'}
+
   clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -5311,6 +5391,10 @@ packages:
     resolution: {integrity: sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==}
     engines: {node: '>= 6'}
 
+  commander@8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
+    engines: {node: '>= 12'}
+
   common-tags@1.8.2:
     resolution: {integrity: sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA==}
     engines: {node: '>=4.0.0'}
@@ -5327,9 +5411,16 @@ packages:
   confbox@0.2.2:
     resolution: {integrity: sha512-1NB+BKqhtNipMsov4xI/NnhCKp9XG9NamYp5PVm9klAT0fsrNPjaFICsCFhNhwZJKNh7zB/3q8qXz0E9oaMNtQ==}
 
+  connect-history-api-fallback@1.6.0:
+    resolution: {integrity: sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg==}
+    engines: {node: '>=0.8'}
+
   connect@3.7.0:
     resolution: {integrity: sha512-ZqRXc+tZukToSNmh5C2iWMSoV3X1YUcPbqEM4DkEG5tNQXrQUZCNVGGv3IuicnkMtPfGf3Xtp8WCXs295iQ1pQ==}
     engines: {node: '>= 0.10.0'}
+
+  consola@2.15.3:
+    resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==}
 
   console-browserify@1.2.0:
     resolution: {integrity: sha512-ZMkYO/LkF17QvCPqM0gxw8yUzigAOZOSWSHg91FH6orS7vcEj5dVZTidN2fQ14yBSdg97RqhSNwLUXInd52OTA==}
@@ -5457,6 +5548,13 @@ packages:
   crypto-browserify@3.12.1:
     resolution: {integrity: sha512-r4ESw/IlusD17lgQi1O20Fa3qNnsckR126TdUuBgAu7GBYSIPvdNyONd3Zrxh0xCwA4+6w/TDArBPsMvhur+KQ==}
     engines: {node: '>= 0.10'}
+
+  css-select@4.3.0:
+    resolution: {integrity: sha512-wPpOYtnsVontu2mODhA19JrqWxNsfdatRKd64kmpRbQgh1KtItko5sTnEpPdpSaJszTOhEMlF/RPz28qj4HqhQ==}
+
+  css-what@6.2.2:
+    resolution: {integrity: sha512-u/O3vwbptzhMs3L1fQE82ZSLHQQfto5gyZzwteVIEyeaY5Fc7R4dapF/BvRoSYFeqfBk4m0V1Vafq5Pjv25wvA==}
+    engines: {node: '>= 6'}
 
   csstype@3.2.3:
     resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
@@ -5757,11 +5855,11 @@ packages:
     resolution: {integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==}
     engines: {node: '>=6.0.0'}
 
-  document-drive@6.0.0-staging.1:
-    resolution: {integrity: sha512-NxoXeCbqpdxBxqvvfEsNpsXuBfxg4YkfUteb8CeIV2hyr/AMcfhyxR6vvpKNbf1NYJPT3ZVdzXlmfMdzXd9JAA==}
+  document-drive@6.0.0-staging.2:
+    resolution: {integrity: sha512-ngsQuHfHW1aOafzHuL/Jf8hzQafs2tUck2F1Hf94Y2UYbuSwrZPVpqos/soVGHm+K3kxV9IG99lzDXRRh7tOhA==}
 
-  document-model@6.0.0-staging.1:
-    resolution: {integrity: sha512-9gYKYC53oJc1N/BnDengh3YnS27CeXalrprjVS41o/3YHY0PLx+LHhLrJkIqIGmqZkXeN9sJtJzBvuWyB1fSZA==}
+  document-model@6.0.0-staging.2:
+    resolution: {integrity: sha512-2TS04B0SrAzRjfMHha2vTaVi6QyROq7mTDwoaQh04OaAob/mnCRnkE6kuyDkBwcAPMa/dHW8O7+DaHNpmSWznw==}
 
   dom-accessibility-api@0.5.16:
     resolution: {integrity: sha512-X7BJ2yElsnOJ30pZF4uIIDfBEVgF4XEBxL9Bxhy6dnrm5hkzqmsWHGTiHqRiITNhMyFLyAiWndIJP7Z1NTteDg==}
@@ -5769,15 +5867,32 @@ packages:
   dom-helpers@5.2.1:
     resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
 
+  dom-serializer@1.4.1:
+    resolution: {integrity: sha512-VHwB3KfrcOOkelEG2ZOfxqLZdfkil8PtJi4P8N2MMXucZq2yLp75ClViUlOVwyoHEDjYU433Aq+5zWP61+RGag==}
+
   domain-browser@4.22.0:
     resolution: {integrity: sha512-IGBwjF7tNk3cwypFNH/7bfzBcgSCbaMOD3GsaY1AU/JRrnHnYgEM0+9kQt52iZxjNsjBtJYtao146V+f8jFZNw==}
     engines: {node: '>=10'}
+
+  domelementtype@2.3.0:
+    resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
+
+  domhandler@4.3.1:
+    resolution: {integrity: sha512-GrwoxYN+uWlzO8uhUXRl0P+kHE4GtVPfYzVLcUxPL7KNdHKj66vvlhiweIHqYYXWlw+T8iLMp42Lm67ghw4WMQ==}
+    engines: {node: '>= 4'}
+
+  domutils@2.8.0:
+    resolution: {integrity: sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==}
 
   dot-case@2.1.1:
     resolution: {integrity: sha512-HnM6ZlFqcajLsyudHq7LeeLDr2rFAVYtDv/hV5qchQEidSck8j9OPUsXY9KwJv/lHMtYlX4DjRQqwFYa+0r8Ug==}
 
   dot-case@3.0.4:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
+
+  dotenv-expand@8.0.3:
+    resolution: {integrity: sha512-SErOMvge0ZUyWd5B0NXMQlDkN+8r+HhVUsxgOO7IoPDOdDRD2JjExpN6y3KnFR66jsJMwSn1pqIivhU5rcJiNg==}
+    engines: {node: '>=12'}
 
   dotenv@16.6.1:
     resolution: {integrity: sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow==}
@@ -5872,6 +5987,9 @@ packages:
   enquirer@2.4.1:
     resolution: {integrity: sha512-rRqJg/6gd538VHvR3PSrdRBb/1Vy2YfzHqzvbhGIQpDRKIa4FgV/54b5Q1xYSxOOwKvjXweS26E0Q+nAMwp2pQ==}
     engines: {node: '>=8.6'}
+
+  entities@2.2.0:
+    resolution: {integrity: sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==}
 
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
@@ -6819,6 +6937,10 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  he@1.2.0:
+    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
+    hasBin: true
+
   header-case@1.0.1:
     resolution: {integrity: sha512-i0q9mkOeSuhXw6bGgiQCCBgY/jlZuV/7dZXyZ9c6LcBrqwvT8eT719E9uxE5LiZftdl+z81Ugbg/VvXV4OJOeQ==}
 
@@ -6857,6 +6979,11 @@ packages:
   hosted-git-info@9.0.2:
     resolution: {integrity: sha512-M422h7o/BR3rmCQ8UHi7cyyMqKltdP9Uo+J2fXK+RSAY+wTcKOIRyhTuKv4qn+DJf3g+PL890AzId5KZpX+CBg==}
     engines: {node: ^20.17.0 || >=22.9.0}
+
+  html-minifier-terser@6.1.0:
+    resolution: {integrity: sha512-YXxSlJBZTP7RS3tWnQw74ooKa6L9b9i9QYXY21eUEvhZ3u9XLfv6OnFsQq6RxkhHygsaUMvYsZRV5rU/OVNZxw==}
+    engines: {node: '>=12'}
+    hasBin: true
 
   html-parse-stringify@3.0.1:
     resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
@@ -7780,6 +7907,10 @@ packages:
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
+  magic-string@0.30.8:
+    resolution: {integrity: sha512-ISQTe55T2ao7XtlAStud6qwYPZjE4GK1S/BeVPus4jrq6JuOnQ00YKQC581RWhR122W7msZV263KzVeLoqidyQ==}
+    engines: {node: '>=12'}
+
   make-fetch-happen@11.1.1:
     resolution: {integrity: sha512-rLWS7GCSTcEujjVBs2YqG7Y4643u8ucvCJeSRqiLYhesrDuzeuFIk37xREzAsfQaqzl8b9rNCE4m6J8tvX4Q8w==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -8330,6 +8461,9 @@ packages:
     engines: {node: '>= 10.12.0'}
     hasBin: true
 
+  node-html-parser@5.4.2:
+    resolution: {integrity: sha512-RaBPP3+51hPne/OolXxcz89iYvQvKOydaqoePpOgXcrOKZhjVIzmpKZz+Hd/RBO2/zN2q6CNJhQzucVz+u3Jyw==}
+
   node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
 
@@ -8387,6 +8521,9 @@ packages:
   nssocket@0.6.0:
     resolution: {integrity: sha512-a9GSOIql5IqgWJR3F/JXG4KpJTA3Z53Cj0MeMvGpglytB1nxE4PdFNC0jINe27CS7cGivoynwc054EzCcT3M3w==}
     engines: {node: '>= 0.10.x'}
+
+  nth-check@2.1.1:
+    resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
   nullthrows@1.1.1:
     resolution: {integrity: sha512-2vPPEi+Z7WqML2jZYddDIfy5Dqb0r2fze2zTxNNknZaFpVHU3mFB3R+DWeJWGVx0ecvttSGlJTI+WG+8Z4cDWw==}
@@ -8695,6 +8832,9 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
 
+  pathe@0.2.0:
+    resolution: {integrity: sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==}
+
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
 
@@ -8759,8 +8899,8 @@ packages:
   pgpass@1.0.5:
     resolution: {integrity: sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==}
 
-  ph-cmd@6.0.0-staging.1:
-    resolution: {integrity: sha512-uRWBndSg92sIn3O2LtmoIH0q9bhVZoTwaWIE/j4HSXwhGA/gtGdLuDIeA90TYRMXu9mA2Q2Jd1AYYwstSsZW8w==}
+  ph-cmd@6.0.0-staging.2:
+    resolution: {integrity: sha512-/BzS6MS/P1KII2vGV4K/u38+/rrVzlKq8fUkpzej5WhqhElNUxGDjf/fnWmrOWjanfQ9P7Bvh6q1CQ7yoMqwMw==}
     engines: {node: '>=24.0.0'}
     hasBin: true
 
@@ -8957,6 +9097,10 @@ packages:
   process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
+
+  progress@2.0.3:
+    resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
+    engines: {node: '>=0.4.0'}
 
   promise-inflight@1.0.1:
     resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
@@ -9330,6 +9474,10 @@ packages:
   regexp.prototype.flags@1.5.4:
     resolution: {integrity: sha512-dYqgNSZbDwkaJ2ceRd9ojCGjBq+mOm9LmtXnAnEGyHhN/5R7iDW2TRw3h+o/jCFxus3P2LfWIIiwowAjANm7IA==}
     engines: {node: '>= 0.4'}
+
+  relateurl@0.2.7:
+    resolution: {integrity: sha512-G08Dxvm4iDN3MLM0EsP62EDV9IuhXPR6blNz6Utcp7zyV3tr4HVNINt6MpaRWbxoOHT3Q7YN2P+jaHX8vUbgog==}
+    engines: {node: '>= 0.10'}
 
   relay-runtime@12.0.0:
     resolution: {integrity: sha512-QU6JKr1tMsry22DXNy9Whsq5rmvwr3LSZiiWV/9+DFpuTWvp+WFhobWMc8TC4OjKFfNhEZy7mOiqUAn5atQtug==}
@@ -10333,6 +10481,9 @@ packages:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
     engines: {node: '>= 0.8'}
 
+  unplugin@1.0.1:
+    resolution: {integrity: sha512-aqrHaVBWW1JVKBHmGo33T5TxeL0qWzfvjWokObHA9bYmN7eNDkwOxmLjhioHl9878qDFMAaT51XNroRyuz7WxA==}
+
   unstorage@1.17.4:
     resolution: {integrity: sha512-fHK0yNg38tBiJKp/Vgsq4j0JEsCmgqH58HAn707S7zGkArbZsVr/CwINoi+nh3h98BRCwKvx1K3Xg9u3VV83sw==}
     peerDependencies:
@@ -10588,6 +10739,11 @@ packages:
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
+  vite-plugin-html@3.2.2:
+    resolution: {integrity: sha512-vb9C9kcdzcIo/Oc3CLZVS03dL5pDlOFuhGlZYDCJ840BhWl/0nGeZWf3Qy7NlOayscY4Cm/QRgULCQkEZige5Q==}
+    peerDependencies:
+      vite: '>=2.0.0'
+
   vite-plugin-node-polyfills@0.24.0:
     resolution: {integrity: sha512-GA9QKLH+vIM8NPaGA+o2t8PDfFUl32J8rUp1zQfMKVJQiNkOX4unE51tR6ppl6iKw5yOrDAdSH7r/UIFLCVhLw==}
     peerDependencies:
@@ -10757,6 +10913,13 @@ packages:
 
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
+
+  webpack-sources@3.3.4:
+    resolution: {integrity: sha512-7tP1PdV4vF+lYPnkMR0jMY5/la2ub5Fc/8VQrrU+lXkiM6C4TjVfGw7iKfyhnTQOsD+6Q/iKw0eFciziRgD58Q==}
+    engines: {node: '>=10.13.0'}
+
+  webpack-virtual-modules@0.5.0:
+    resolution: {integrity: sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==}
 
   whatwg-fetch@3.6.20:
     resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
@@ -13067,7 +13230,6 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
-    optional: true
 
   '@jridgewell/sourcemap-codec@1.5.5': {}
 
@@ -14673,34 +14835,15 @@ snapshots:
       - pg-native
       - supports-color
 
-  '@powerhousedao/builder-tools@6.0.0-staging.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
+  '@powerhousedao/builder-tools@6.0.0-staging.2(@types/node@24.10.9)(encoding@0.1.13)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)':
     dependencies:
-      '@powerhousedao/config': 6.0.0-staging.1
-      '@vitejs/plugin-basic-ssl': 2.1.4(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
-      '@vitejs/plugin-react': 5.1.4(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
-      document-model: 6.0.0-staging.1
-      esbuild: 0.25.12
-      esbuild-plugins-node-modules-polyfill: 1.8.1(esbuild@0.25.12)
-      fast-glob: 3.3.3
-      magic-string: 0.30.21
-      react: 19.2.4
-      react-dom: 19.2.4(react@19.2.4)
-      read-pkg: 10.1.0
-      resolve.exports: 2.0.3
-      vite-envs: 4.6.2
-      vite-plugin-node-polyfills: 0.25.0(rollup@4.57.0)(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
-      zod: 4.3.6
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-      - vite
-
-  '@powerhousedao/builder-tools@6.0.0-staging.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
-    dependencies:
-      '@powerhousedao/config': 6.0.0-staging.1
+      '@powerhousedao/config': 6.0.0-staging.2
+      '@powerhousedao/shared': 6.0.0-staging.2
+      '@sentry/vite-plugin': 4.9.1(encoding@0.1.13)
+      '@tailwindcss/vite': 4.1.18(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       '@vitejs/plugin-basic-ssl': 2.1.4(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       '@vitejs/plugin-react': 5.1.4(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
-      document-model: 6.0.0-staging.1
+      document-model: 6.0.0-staging.2
       esbuild: 0.25.12
       esbuild-plugins-node-modules-polyfill: 1.8.1(esbuild@0.25.12)
       fast-glob: 3.3.3
@@ -14709,20 +14852,38 @@ snapshots:
       react-dom: 19.2.4(react@19.2.4)
       read-pkg: 10.1.0
       resolve.exports: 2.0.3
+      vite: 7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       vite-envs: 4.6.2
+      vite-plugin-html: 3.2.2(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       vite-plugin-node-polyfills: 0.25.0(rollup@4.57.0)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
+      vite-plugin-svgr: 4.5.0(rollup@4.57.0)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       zod: 4.3.6
     transitivePeerDependencies:
+      - '@types/node'
+      - encoding
+      - jiti
+      - less
+      - lightningcss
       - rollup
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
       - supports-color
-      - vite
+      - terser
+      - tsx
+      - typescript
+      - yaml
 
-  '@powerhousedao/builder-tools@6.0.0-staging.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
+  '@powerhousedao/builder-tools@6.0.0-staging.2(@types/node@25.2.3)(encoding@0.1.13)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)':
     dependencies:
-      '@powerhousedao/config': 6.0.0-staging.1
+      '@powerhousedao/config': 6.0.0-staging.2
+      '@powerhousedao/shared': 6.0.0-staging.2
+      '@sentry/vite-plugin': 4.9.1(encoding@0.1.13)
+      '@tailwindcss/vite': 4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       '@vitejs/plugin-basic-ssl': 2.1.4(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       '@vitejs/plugin-react': 5.1.4(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
-      document-model: 6.0.0-staging.1
+      document-model: 6.0.0-staging.2
       esbuild: 0.25.12
       esbuild-plugins-node-modules-polyfill: 1.8.1(esbuild@0.25.12)
       fast-glob: 3.3.3
@@ -14731,28 +14892,43 @@ snapshots:
       react-dom: 19.2.4(react@19.2.4)
       read-pkg: 10.1.0
       resolve.exports: 2.0.3
+      vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       vite-envs: 4.6.2
+      vite-plugin-html: 3.2.2(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       vite-plugin-node-polyfills: 0.25.0(rollup@4.57.0)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
+      vite-plugin-svgr: 4.5.0(rollup@4.57.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
       zod: 4.3.6
     transitivePeerDependencies:
+      - '@types/node'
+      - encoding
+      - jiti
+      - less
+      - lightningcss
       - rollup
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
       - supports-color
-      - vite
+      - terser
+      - tsx
+      - typescript
+      - yaml
 
-  '@powerhousedao/codegen@6.0.0-staging.1(@parcel/watcher@2.5.6)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)':
+  '@powerhousedao/codegen@6.0.0-staging.2(@parcel/watcher@2.5.6)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)':
     dependencies:
       '@graphql-codegen/cli': 6.1.1(@parcel/watcher@2.5.6)(@types/node@25.2.3)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(graphql@16.12.0)(typescript@5.9.3)(utf-8-validate@5.0.10)
       '@graphql-codegen/typescript': 5.0.7(encoding@0.1.13)(graphql@16.12.0)
-      '@powerhousedao/common': 6.0.0-staging.1(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
-      '@powerhousedao/config': 6.0.0-staging.1
+      '@powerhousedao/common': 6.0.0-staging.2(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/config': 6.0.0-staging.2
       '@powerhousedao/document-engineering': 1.40.1(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
-      '@powerhousedao/shared': 6.0.0-staging.1
+      '@powerhousedao/shared': 6.0.0-staging.2
       '@tmpl/core': '@jsr/tmpl__core@0.6.3'
       '@types/node': 25.2.3
       arg: 5.0.2
       chalk: 5.6.2
       change-case: 5.4.4
-      document-model: 6.0.0-staging.1
+      document-model: 6.0.0-staging.2
       enquirer: 2.4.1
       execa: 8.0.1
       graphql: 16.12.0
@@ -14796,13 +14972,13 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@powerhousedao/common@6.0.0-staging.1(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)':
+  '@powerhousedao/common@6.0.0-staging.2(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)':
     dependencies:
       '@powerhousedao/analytics-engine-core': 0.6.4
-      '@powerhousedao/reactor-browser': 6.0.0-staging.1(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
-      '@powerhousedao/shared': 6.0.0-staging.1
+      '@powerhousedao/reactor-browser': 6.0.0-staging.2(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/shared': 6.0.0-staging.2
       chalk: 5.6.2
-      document-model: 6.0.0-staging.1
+      document-model: 6.0.0-staging.2
       graphql-request: 7.4.0(graphql@16.12.0)
       luxon: 3.7.2
       npm-package-arg: 13.0.2
@@ -14831,31 +15007,31 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@powerhousedao/config@6.0.0-staging.1': {}
+  '@powerhousedao/config@6.0.0-staging.2': {}
 
-  '@powerhousedao/connect@6.0.0-staging.1(2328a3056d22740419879a7f68a7d20a)':
+  '@powerhousedao/connect@6.0.0-staging.2(b252f85a4c749d4bca5ebcf1cc77fb6f)':
     dependencies:
       '@electric-sql/pglite': 0.3.15
       '@electric-sql/pglite-tools': 0.2.20(@electric-sql/pglite@0.3.15)
       '@openfeature/core': 1.9.1
       '@openfeature/web-sdk': 1.7.2(@openfeature/core@1.9.1)
-      '@powerhousedao/builder-tools': 6.0.0-staging.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
-      '@powerhousedao/config': 6.0.0-staging.1
-      '@powerhousedao/design-system': 6.0.0-staging.1(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
+      '@powerhousedao/builder-tools': 6.0.0-staging.2(@types/node@25.2.3)(encoding@0.1.13)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
+      '@powerhousedao/config': 6.0.0-staging.2
+      '@powerhousedao/design-system': 6.0.0-staging.2(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
       '@powerhousedao/document-engineering': 1.40.1(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(bufferutil@4.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
-      '@powerhousedao/powerhouse-vetra-packages': 6.0.0-staging.1(36c711466785fe23539010e1367ac2cf)
-      '@powerhousedao/reactor': 6.0.0-staging.1(pg@8.18.0)
-      '@powerhousedao/reactor-browser': 6.0.0-staging.1(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
-      '@powerhousedao/shared': 6.0.0-staging.1
-      '@renown/sdk': 6.0.0-staging.1(@powerhousedao/reactor@6.0.0-staging.1(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.1)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/powerhouse-vetra-packages': 6.0.0-staging.2(36c711466785fe23539010e1367ac2cf)
+      '@powerhousedao/reactor': 6.0.0-staging.2(pg@8.18.0)
+      '@powerhousedao/reactor-browser': 6.0.0-staging.2(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/shared': 6.0.0-staging.2
+      '@renown/sdk': 6.0.0-staging.2(@powerhousedao/reactor@6.0.0-staging.2(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.2)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       '@sentry/react': 10.37.0(react@19.2.4)
       '@types/node': 25.2.3
       '@types/react': 19.2.14
       '@types/react-dom': 19.2.3(@types/react@19.2.14)
       '@types/wicg-file-system-access': 2023.10.7
       cypress: 14.5.4
-      document-drive: 6.0.0-staging.1(pg@8.18.0)
-      document-model: 6.0.0-staging.1
+      document-drive: 6.0.0-staging.2(pg@8.18.0)
+      document-model: 6.0.0-staging.2
       graphql: 16.12.0
       graphql-request: 7.4.0(graphql@16.12.0)
       i18next: 25.8.0(typescript@5.9.3)
@@ -14886,6 +15062,7 @@ snapshots:
       - better-sqlite3
       - bluebird
       - bufferutil
+      - encoding
       - ibm_db
       - immer
       - jiti
@@ -14917,9 +15094,9 @@ snapshots:
       - yaml
       - zod
 
-  '@powerhousedao/design-system@6.0.0-staging.1(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)':
+  '@powerhousedao/design-system@6.0.0-staging.2(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)':
     dependencies:
-      '@powerhousedao/reactor-browser': 6.0.0-staging.1(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/reactor-browser': 6.0.0-staging.2(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       '@radix-ui/react-checkbox': 1.3.3(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@radix-ui/react-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@radix-ui/react-dropdown-menu': 2.1.16(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -14939,8 +15116,8 @@ snapshots:
       date-fns: 4.1.0
       date-fns-tz: 3.2.0(date-fns@4.1.0)
       diff: 7.0.0
-      document-drive: 6.0.0-staging.1(pg@8.18.0)
-      document-model: 6.0.0-staging.1
+      document-drive: 6.0.0-staging.2(pg@8.18.0)
+      document-model: 6.0.0-staging.2
       mathjs: 13.2.3
       natural-orderby: 4.0.0
       react: 19.2.4
@@ -14988,9 +15165,9 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@powerhousedao/design-system@6.0.0-staging.1(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)':
+  '@powerhousedao/design-system@6.0.0-staging.2(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)':
     dependencies:
-      '@powerhousedao/reactor-browser': 6.0.0-staging.1(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/reactor-browser': 6.0.0-staging.2(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       '@radix-ui/react-checkbox': 1.3.3(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@radix-ui/react-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@radix-ui/react-dropdown-menu': 2.1.16(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -15010,8 +15187,8 @@ snapshots:
       date-fns: 4.1.0
       date-fns-tz: 3.2.0(date-fns@4.1.0)
       diff: 7.0.0
-      document-drive: 6.0.0-staging.1(pg@8.18.0)
-      document-model: 6.0.0-staging.1
+      document-drive: 6.0.0-staging.2(pg@8.18.0)
+      document-model: 6.0.0-staging.2
       mathjs: 13.2.3
       natural-orderby: 4.0.0
       react: 19.2.4
@@ -15175,16 +15352,15 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@powerhousedao/ph-cli@6.0.0-staging.1(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(document-model@6.0.0-staging.1)(encoding@0.1.13)(graphql@16.12.0)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)':
+  '@powerhousedao/ph-cli@6.0.0-staging.2(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(document-model@6.0.0-staging.2)(encoding@0.1.13)(graphql@16.12.0)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)':
     dependencies:
-      '@powerhousedao/builder-tools': 6.0.0-staging.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
-      '@powerhousedao/codegen': 6.0.0-staging.1(@parcel/watcher@2.5.6)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
-      '@powerhousedao/common': 6.0.0-staging.1(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
-      '@powerhousedao/config': 6.0.0-staging.1
-      '@powerhousedao/reactor': 6.0.0-staging.1(pg@8.18.0)
-      '@powerhousedao/shared': 6.0.0-staging.1
-      '@powerhousedao/switchboard': 6.0.0-staging.1(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)
-      '@renown/sdk': 6.0.0-staging.1(@powerhousedao/reactor@6.0.0-staging.1(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.1)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/codegen': 6.0.0-staging.2(@parcel/watcher@2.5.6)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/common': 6.0.0-staging.2(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/config': 6.0.0-staging.2
+      '@powerhousedao/reactor': 6.0.0-staging.2(pg@8.18.0)
+      '@powerhousedao/shared': 6.0.0-staging.2
+      '@powerhousedao/switchboard': 6.0.0-staging.2(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)
+      '@renown/sdk': 6.0.0-staging.2(@powerhousedao/reactor@6.0.0-staging.2(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.2)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       cmd-ts: 0.15.0
       colorette: 2.0.20
       commander: 12.1.0
@@ -15230,7 +15406,6 @@ snapshots:
       - pg-native
       - react
       - react-dom
-      - rollup
       - sass
       - sass-embedded
       - snowflake-sdk
@@ -15246,7 +15421,7 @@ snapshots:
       - yaml
       - zod
 
-  '@powerhousedao/powerhouse-vetra-packages@6.0.0-staging.1(36c711466785fe23539010e1367ac2cf)':
+  '@powerhousedao/powerhouse-vetra-packages@6.0.0-staging.2(36c711466785fe23539010e1367ac2cf)':
     dependencies:
       '@codemirror/autocomplete': 6.18.6
       '@codemirror/commands': 6.8.1
@@ -15258,9 +15433,9 @@ snapshots:
       '@codemirror/view': 6.36.7
       '@graphql-tools/utils': 11.0.0(graphql@16.12.0)
       '@hookform/resolvers': 5.2.2(react-hook-form@7.71.1(react@19.2.4))
-      '@powerhousedao/design-system': 6.0.0-staging.1(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
+      '@powerhousedao/design-system': 6.0.0-staging.2(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
       '@powerhousedao/document-engineering': 1.40.1(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(bufferutil@4.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
-      '@powerhousedao/reactor-browser': 6.0.0-staging.1(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/reactor-browser': 6.0.0-staging.2(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       '@radix-ui/react-label': 2.1.8(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.14)(react@19.2.4)
       '@radix-ui/react-tabs': 1.1.13(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -15269,7 +15444,7 @@ snapshots:
       class-variance-authority: 0.7.0
       clsx: 2.1.1
       cm6-graphql: 0.2.1(@codemirror/autocomplete@6.18.6)(@codemirror/language@6.11.0)(@codemirror/lint@6.8.5)(@codemirror/state@6.5.2)(@codemirror/view@6.36.7)(@lezer/highlight@1.2.3)(graphql@16.12.0)
-      document-model: 6.0.0-staging.1
+      document-model: 6.0.0-staging.2
       graphql: 16.12.0
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
@@ -15315,7 +15490,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@powerhousedao/reactor-api@6.0.0-staging.1(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)':
+  '@powerhousedao/reactor-api@6.0.0-staging.2(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)':
     dependencies:
       '@apollo/gateway': 2.13.0(encoding@0.1.13)(graphql@16.12.0)
       '@apollo/server': 5.3.0(graphql@16.12.0)
@@ -15332,18 +15507,18 @@ snapshots:
       '@powerhousedao/analytics-engine-core': 0.6.4
       '@powerhousedao/analytics-engine-graphql': 0.6.4
       '@powerhousedao/analytics-engine-pg': 0.6.4(@azure/core-client@1.10.1)
-      '@powerhousedao/config': 6.0.0-staging.1
+      '@powerhousedao/config': 6.0.0-staging.2
       '@powerhousedao/document-engineering': 1.40.1(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
-      '@powerhousedao/reactor': 6.0.0-staging.1(pg@8.18.0)
-      '@powerhousedao/reactor-mcp': 6.0.0-staging.1(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
-      '@powerhousedao/shared': 6.0.0-staging.1
-      '@renown/sdk': 6.0.0-staging.1(@powerhousedao/reactor@6.0.0-staging.1(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.1)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/reactor': 6.0.0-staging.2(pg@8.18.0)
+      '@powerhousedao/reactor-mcp': 6.0.0-staging.2(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
+      '@powerhousedao/shared': 6.0.0-staging.2
+      '@renown/sdk': 6.0.0-staging.2(@powerhousedao/reactor@6.0.0-staging.2(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.2)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       body-parser: 1.20.4
       change-case: 5.4.4
       cors: 2.8.6
       devcert: 1.2.2
-      document-drive: 6.0.0-staging.1(pg@8.18.0)
-      document-model: 6.0.0-staging.1
+      document-drive: 6.0.0-staging.2(pg@8.18.0)
+      document-model: 6.0.0-staging.2
       dotenv: 16.6.1
       express: 4.22.1
       graphql: 16.12.0
@@ -15405,17 +15580,17 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@powerhousedao/reactor-browser@6.0.0-staging.1(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)':
+  '@powerhousedao/reactor-browser@6.0.0-staging.2(bufferutil@4.1.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)':
     dependencies:
       '@electric-sql/pglite': 0.3.15
       '@powerhousedao/analytics-engine-browser': 0.6.4(pg@8.18.0)
       '@powerhousedao/analytics-engine-core': 0.6.4
-      '@powerhousedao/reactor': 6.0.0-staging.1(pg@8.18.0)
-      '@renown/sdk': 6.0.0-staging.1(@powerhousedao/reactor@6.0.0-staging.1(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.1)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/reactor': 6.0.0-staging.2(pg@8.18.0)
+      '@renown/sdk': 6.0.0-staging.2(@powerhousedao/reactor@6.0.0-staging.2(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.2)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       '@tanstack/react-query': 5.90.20(react@19.2.4)
       change-case: 5.4.4
-      document-drive: 6.0.0-staging.1(pg@8.18.0)
-      document-model: 6.0.0-staging.1
+      document-drive: 6.0.0-staging.2(pg@8.18.0)
+      document-model: 6.0.0-staging.2
       fast-deep-equal: 3.1.3
       kysely: 0.28.11
       kysely-pglite-dialect: 1.2.0(@electric-sql/pglite@0.3.15)(kysely@0.28.11)
@@ -15445,13 +15620,13 @@ snapshots:
       - utf-8-validate
       - zod
 
-  '@powerhousedao/reactor-local@6.0.0-staging.1(@azure/core-client@1.10.1)(@openfeature/core@1.9.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)':
+  '@powerhousedao/reactor-local@6.0.0-staging.2(@azure/core-client@1.10.1)(@openfeature/core@1.9.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)':
     dependencies:
       '@openfeature/env-var-provider': 0.3.1(@openfeature/server-sdk@1.20.1(@openfeature/core@1.9.1))
       '@openfeature/server-sdk': 1.20.1(@openfeature/core@1.9.1)
-      '@powerhousedao/reactor': 6.0.0-staging.1(pg@8.18.0)
-      '@powerhousedao/reactor-api': 6.0.0-staging.1(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
-      document-drive: 6.0.0-staging.1(pg@8.18.0)
+      '@powerhousedao/reactor': 6.0.0-staging.2(pg@8.18.0)
+      '@powerhousedao/reactor-api': 6.0.0-staging.2(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
+      document-drive: 6.0.0-staging.2(pg@8.18.0)
       dotenv: 16.6.1
     transitivePeerDependencies:
       - '@azure/core-client'
@@ -15501,19 +15676,19 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@powerhousedao/reactor-mcp@6.0.0-staging.1(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)':
+  '@powerhousedao/reactor-mcp@6.0.0-staging.2(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)':
     dependencies:
       '@ai-sdk/openai': 2.0.89(zod@4.3.6)
       '@modelcontextprotocol/sdk': 1.25.3(hono@4.11.7)(zod@4.3.6)
       '@openfeature/core': 1.9.1
       '@openfeature/env-var-provider': 0.3.1(@openfeature/server-sdk@1.20.1(@openfeature/core@1.9.1))
       '@openfeature/server-sdk': 1.20.1(@openfeature/core@1.9.1)
-      '@powerhousedao/codegen': 6.0.0-staging.1(@parcel/watcher@2.5.6)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
-      '@powerhousedao/config': 6.0.0-staging.1
+      '@powerhousedao/codegen': 6.0.0-staging.2(@parcel/watcher@2.5.6)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/config': 6.0.0-staging.2
       ai: 5.0.123(zod@4.3.6)
       change-case: 5.4.4
-      document-drive: 6.0.0-staging.1(pg@8.18.0)
-      document-model: 6.0.0-staging.1
+      document-drive: 6.0.0-staging.2(pg@8.18.0)
+      document-model: 6.0.0-staging.2
       express: 4.22.1
       vite: 7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
       zod: 4.3.6
@@ -15561,12 +15736,12 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@powerhousedao/reactor@6.0.0-staging.1(pg@8.18.0)':
+  '@powerhousedao/reactor@6.0.0-staging.2(pg@8.18.0)':
     dependencies:
       '@electric-sql/pglite': 0.3.15
-      '@powerhousedao/shared': 6.0.0-staging.1
-      document-drive: 6.0.0-staging.1(pg@8.18.0)
-      document-model: 6.0.0-staging.1
+      '@powerhousedao/shared': 6.0.0-staging.2
+      document-drive: 6.0.0-staging.2(pg@8.18.0)
+      document-model: 6.0.0-staging.2
       kysely: 0.28.11
       kysely-pglite-dialect: 1.2.0(@electric-sql/pglite@0.3.15)(kysely@0.28.11)
       uuid: 11.1.0
@@ -15587,28 +15762,29 @@ snapshots:
       graphql: 16.12.0
       zod: 4.3.6
 
-  '@powerhousedao/shared@6.0.0-staging.1':
+  '@powerhousedao/shared@6.0.0-staging.2':
     dependencies:
       '@powerhousedao/analytics-engine-core': 0.6.4
       '@sindresorhus/fnv1a': 3.1.0
       kysely: 0.28.11
       mutative: 1.3.0
       react: 19.2.4
+      zod: 4.3.6
 
-  '@powerhousedao/switchboard@6.0.0-staging.1(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)':
+  '@powerhousedao/switchboard@6.0.0-staging.2(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)(zod@4.3.6)':
     dependencies:
       '@electric-sql/pglite': 0.3.15
       '@openfeature/core': 1.9.1
       '@openfeature/env-var-provider': 0.3.1(@openfeature/server-sdk@1.20.1(@openfeature/core@1.9.1))
       '@openfeature/server-sdk': 1.20.1(@openfeature/core@1.9.1)
-      '@powerhousedao/config': 6.0.0-staging.1
-      '@powerhousedao/reactor': 6.0.0-staging.1(pg@8.18.0)
-      '@powerhousedao/reactor-api': 6.0.0-staging.1(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
+      '@powerhousedao/config': 6.0.0-staging.2
+      '@powerhousedao/reactor': 6.0.0-staging.2(pg@8.18.0)
+      '@powerhousedao/reactor-api': 6.0.0-staging.2(@azure/core-client@1.10.1)(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.5.0(@opentelemetry/api@1.9.0))(@parcel/watcher@2.5.6)(@types/node@24.10.9)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(bufferutil@4.1.0)(crossws@0.3.5)(encoding@0.1.13)(hono@4.11.7)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(yaml@2.8.2)
       '@pyroscope/nodejs': 0.4.8(express@4.22.1)
-      '@renown/sdk': 6.0.0-staging.1(@powerhousedao/reactor@6.0.0-staging.1(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.1)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@renown/sdk': 6.0.0-staging.2(@powerhousedao/reactor@6.0.0-staging.2(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.2)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
       '@sentry/node': 9.47.1
-      document-drive: 6.0.0-staging.1(pg@8.18.0)
-      document-model: 6.0.0-staging.1
+      document-drive: 6.0.0-staging.2(pg@8.18.0)
+      document-model: 6.0.0-staging.2
       dotenv: 16.6.1
       express: 4.22.1
       kysely: 0.28.11
@@ -15663,17 +15839,17 @@ snapshots:
       - yaml
       - zod
 
-  '@powerhousedao/vetra@6.0.0-staging.1(22d15f194e57afe04cbe1b4451b19644)':
+  '@powerhousedao/vetra@6.0.0-staging.2(f6cdeeb4b61e9b2501e00d34bccf89a6)':
     dependencies:
-      '@powerhousedao/builder-tools': 6.0.0-staging.1(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))
-      '@powerhousedao/common': 6.0.0-staging.1(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
-      '@powerhousedao/config': 6.0.0-staging.1
-      '@powerhousedao/design-system': 6.0.0-staging.1(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
-      '@powerhousedao/reactor': 6.0.0-staging.1(pg@8.18.0)
-      '@powerhousedao/shared': 6.0.0-staging.1
+      '@powerhousedao/builder-tools': 6.0.0-staging.2(@types/node@24.10.9)(encoding@0.1.13)(jiti@2.6.1)(lightningcss@1.30.2)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(rollup@4.57.0)(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
+      '@powerhousedao/common': 6.0.0-staging.2(bufferutil@4.1.0)(graphql@16.12.0)(pg@8.18.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
+      '@powerhousedao/config': 6.0.0-staging.2
+      '@powerhousedao/design-system': 6.0.0-staging.2(@coinbase/wallet-sdk@4.3.6(@types/react@19.2.10)(bufferutil@4.1.0)(react@19.2.4)(typescript@5.9.3)(use-sync-external-store@1.4.0(react@19.2.4))(utf-8-validate@5.0.10)(zod@4.3.6))(@metamask/sdk@0.33.1(bufferutil@4.1.0)(encoding@0.1.13)(utf-8-validate@5.0.10))(@safe-global/safe-apps-provider@0.18.6(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@safe-global/safe-apps-sdk@9.1.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(@tanstack/query-core@5.90.20)(@types/react-dom@19.2.3(@types/react@19.2.10))(@types/react@19.2.10)(@walletconnect/ethereum-provider@2.21.1(@azure/identity@4.13.0)(@types/react@19.2.10)(bufferutil@4.1.0)(encoding@0.1.13)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6))(bufferutil@4.1.0)(ox@0.12.4(typescript@5.9.3)(zod@4.3.6))(pg@8.18.0)(porto@0.2.35)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)
+      '@powerhousedao/reactor': 6.0.0-staging.2(pg@8.18.0)
+      '@powerhousedao/shared': 6.0.0-staging.2
       change-case: 5.4.4
       colorette: 2.0.20
-      document-model: 6.0.0-staging.1
+      document-model: 6.0.0-staging.2
       graphql: 16.12.0
       graphql-tag: 2.12.6(graphql@16.12.0)
       kysely: 0.28.11
@@ -15687,14 +15863,19 @@ snapshots:
       - '@safe-global/safe-apps-provider'
       - '@safe-global/safe-apps-sdk'
       - '@tanstack/query-core'
+      - '@types/node'
       - '@types/react'
       - '@types/react-dom'
       - '@walletconnect/ethereum-provider'
       - better-sqlite3
       - bluebird
       - bufferutil
+      - encoding
       - ibm_db
       - immer
+      - jiti
+      - less
+      - lightningcss
       - mariadb
       - mysql
       - mysql2
@@ -15705,13 +15886,19 @@ snapshots:
       - pg-native
       - porto
       - rollup
+      - sass
+      - sass-embedded
       - snowflake-sdk
       - sqlite3
+      - stylus
+      - sugarss
       - supports-color
       - tedious
+      - terser
+      - tsx
       - typescript
       - utf-8-validate
-      - vite
+      - yaml
 
   '@prisma/client@5.17.0(prisma@5.17.0)':
     optionalDependencies:
@@ -16789,15 +16976,15 @@ snapshots:
 
   '@remix-run/router@1.23.2': {}
 
-  '@renown/sdk@6.0.0-staging.1(@powerhousedao/reactor@6.0.0-staging.1(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.1)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)':
+  '@renown/sdk@6.0.0-staging.2(@powerhousedao/reactor@6.0.0-staging.2(pg@8.18.0))(bufferutil@4.1.0)(document-model@6.0.0-staging.2)(react@19.2.4)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)':
     dependencies:
       '@didtools/key-did': 1.0.0(bufferutil@4.1.0)(typescript@5.9.3)(utf-8-validate@5.0.10)(zod@4.3.6)
-      '@powerhousedao/reactor': 6.0.0-staging.1(pg@8.18.0)
+      '@powerhousedao/reactor': 6.0.0-staging.2(pg@8.18.0)
       did-jwt: 8.0.18
       did-jwt-vc: 4.0.16
       did-key-creator: 1.2.0
       did-resolver: 4.1.0
-      document-model: 6.0.0-staging.1
+      document-model: 6.0.0-staging.2
       key-did-resolver: 4.0.0
       uint8arrays: 5.1.0
     optionalDependencies:
@@ -17093,6 +17280,11 @@ snapshots:
     optionalDependencies:
       rollup: 4.57.0
 
+  '@rollup/pluginutils@4.2.1':
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+
   '@rollup/pluginutils@5.3.0(rollup@4.57.0)':
     dependencies:
       '@types/estree': 1.0.8
@@ -17273,6 +17465,8 @@ snapshots:
       '@sentry-internal/browser-utils': 10.37.0
       '@sentry/core': 10.37.0
 
+  '@sentry/babel-plugin-component-annotate@4.9.1': {}
+
   '@sentry/browser@10.37.0':
     dependencies:
       '@sentry-internal/browser-utils': 10.37.0
@@ -17280,6 +17474,64 @@ snapshots:
       '@sentry-internal/replay': 10.37.0
       '@sentry-internal/replay-canvas': 10.37.0
       '@sentry/core': 10.37.0
+
+  '@sentry/bundler-plugin-core@4.9.1(encoding@0.1.13)':
+    dependencies:
+      '@babel/core': 7.29.0
+      '@sentry/babel-plugin-component-annotate': 4.9.1
+      '@sentry/cli': 2.58.5(encoding@0.1.13)
+      dotenv: 16.6.1
+      find-up: 5.0.0
+      glob: 10.5.0
+      magic-string: 0.30.8
+      unplugin: 1.0.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+
+  '@sentry/cli-darwin@2.58.5':
+    optional: true
+
+  '@sentry/cli-linux-arm64@2.58.5':
+    optional: true
+
+  '@sentry/cli-linux-arm@2.58.5':
+    optional: true
+
+  '@sentry/cli-linux-i686@2.58.5':
+    optional: true
+
+  '@sentry/cli-linux-x64@2.58.5':
+    optional: true
+
+  '@sentry/cli-win32-arm64@2.58.5':
+    optional: true
+
+  '@sentry/cli-win32-i686@2.58.5':
+    optional: true
+
+  '@sentry/cli-win32-x64@2.58.5':
+    optional: true
+
+  '@sentry/cli@2.58.5(encoding@0.1.13)':
+    dependencies:
+      https-proxy-agent: 5.0.1
+      node-fetch: 2.7.0(encoding@0.1.13)
+      progress: 2.0.3
+      proxy-from-env: 1.1.0
+      which: 2.0.2
+    optionalDependencies:
+      '@sentry/cli-darwin': 2.58.5
+      '@sentry/cli-linux-arm': 2.58.5
+      '@sentry/cli-linux-arm64': 2.58.5
+      '@sentry/cli-linux-i686': 2.58.5
+      '@sentry/cli-linux-x64': 2.58.5
+      '@sentry/cli-win32-arm64': 2.58.5
+      '@sentry/cli-win32-i686': 2.58.5
+      '@sentry/cli-win32-x64': 2.58.5
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
 
   '@sentry/core@10.37.0': {}
 
@@ -17352,6 +17604,14 @@ snapshots:
       '@sentry/browser': 10.37.0
       '@sentry/core': 10.37.0
       react: 19.2.4
+
+  '@sentry/vite-plugin@4.9.1(encoding@0.1.13)':
+    dependencies:
+      '@sentry/bundler-plugin-core': 4.9.1(encoding@0.1.13)
+      unplugin: 1.0.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
 
   '@sinclair/typebox@0.27.8': {}
 
@@ -17531,6 +17791,20 @@ snapshots:
       '@tailwindcss/oxide-wasm32-wasi': 4.1.18
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.18
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.18
+
+  '@tailwindcss/vite@4.1.18(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
+    dependencies:
+      '@tailwindcss/node': 4.1.18
+      '@tailwindcss/oxide': 4.1.18
+      tailwindcss: 4.1.18
+      vite: 7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+
+  '@tailwindcss/vite@4.1.18(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
+    dependencies:
+      '@tailwindcss/node': 4.1.18
+      '@tailwindcss/oxide': 4.1.18
+      tailwindcss: 4.1.18
+      vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
 
   '@tanstack/query-core@5.90.20': {}
 
@@ -17919,10 +18193,6 @@ snapshots:
 
   '@vercel/oidc@3.1.0': {}
 
-  '@vitejs/plugin-basic-ssl@2.1.4(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
-    dependencies:
-      vite: 6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
-
   '@vitejs/plugin-basic-ssl@2.1.4(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
       vite: 7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
@@ -17937,18 +18207,6 @@ snapshots:
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.28.6)
       '@babel/plugin-transform-react-jsx-source': 7.27.1(@babel/core@7.28.6)
       '@rolldown/pluginutils': 1.0.0-beta.53
-      '@types/babel__core': 7.20.5
-      react-refresh: 0.18.0
-      vite: 6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
-    transitivePeerDependencies:
-      - supports-color
-
-  '@vitejs/plugin-react@5.1.4(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2))':
-    dependencies:
-      '@babel/core': 7.29.0
-      '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.29.0)
-      '@babel/plugin-transform-react-jsx-source': 7.27.1(@babel/core@7.29.0)
-      '@rolldown/pluginutils': 1.0.0-rc.3
       '@types/babel__core': 7.20.5
       react-refresh: 0.18.0
       vite: 6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
@@ -19106,6 +19364,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  boolbase@1.0.0: {}
+
   bowser@2.13.1:
     optional: true
 
@@ -19467,6 +19727,10 @@ snapshots:
     dependencies:
       clsx: 2.1.1
 
+  clean-css@5.3.3:
+    dependencies:
+      source-map: 0.6.1
+
   clean-stack@2.2.0: {}
 
   cli-cursor@3.1.0:
@@ -19612,10 +19876,11 @@ snapshots:
 
   commander@2.15.1: {}
 
-  commander@2.20.3:
-    optional: true
+  commander@2.20.3: {}
 
   commander@6.2.1: {}
+
+  commander@8.3.0: {}
 
   common-tags@1.8.2: {}
 
@@ -19627,6 +19892,8 @@ snapshots:
 
   confbox@0.2.2: {}
 
+  connect-history-api-fallback@1.6.0: {}
+
   connect@3.7.0:
     dependencies:
       debug: 2.6.9
@@ -19636,6 +19903,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
     optional: true
+
+  consola@2.15.3: {}
 
   console-browserify@1.2.0: {}
 
@@ -19794,6 +20063,16 @@ snapshots:
       public-encrypt: 4.0.3
       randombytes: 2.1.0
       randomfill: 1.0.4
+
+  css-select@4.3.0:
+    dependencies:
+      boolbase: 1.0.0
+      css-what: 6.2.2
+      domhandler: 4.3.1
+      domutils: 2.8.0
+      nth-check: 2.1.1
+
+  css-what@6.2.2: {}
 
   csstype@3.2.3: {}
 
@@ -20162,13 +20441,13 @@ snapshots:
     dependencies:
       esutils: 2.0.3
 
-  document-drive@6.0.0-staging.1(pg@8.18.0):
+  document-drive@6.0.0-staging.2(pg@8.18.0):
     dependencies:
       '@powerhousedao/analytics-engine-core': 0.6.4
-      '@powerhousedao/shared': 6.0.0-staging.1
+      '@powerhousedao/shared': 6.0.0-staging.2
       '@sindresorhus/fnv1a': 3.1.0
       change-case: 5.4.4
-      document-model: 6.0.0-staging.1
+      document-model: 6.0.0-staging.2
       exponential-backoff: 3.1.3
       graphql: 16.12.0
       graphql-request: 7.4.0(graphql@16.12.0)
@@ -20198,9 +20477,9 @@ snapshots:
       - supports-color
       - tedious
 
-  document-model@6.0.0-staging.1:
+  document-model@6.0.0-staging.2:
     dependencies:
-      '@powerhousedao/shared': 6.0.0-staging.1
+      '@powerhousedao/shared': 6.0.0-staging.2
       change-case: 5.4.4
       jszip: 3.10.1
       mime: 4.1.0
@@ -20216,7 +20495,25 @@ snapshots:
       '@babel/runtime': 7.28.6
       csstype: 3.2.3
 
+  dom-serializer@1.4.1:
+    dependencies:
+      domelementtype: 2.3.0
+      domhandler: 4.3.1
+      entities: 2.2.0
+
   domain-browser@4.22.0: {}
+
+  domelementtype@2.3.0: {}
+
+  domhandler@4.3.1:
+    dependencies:
+      domelementtype: 2.3.0
+
+  domutils@2.8.0:
+    dependencies:
+      dom-serializer: 1.4.1
+      domelementtype: 2.3.0
+      domhandler: 4.3.1
 
   dot-case@2.1.1:
     dependencies:
@@ -20226,6 +20523,8 @@ snapshots:
     dependencies:
       no-case: 3.0.4
       tslib: 2.8.1
+
+  dotenv-expand@8.0.3: {}
 
   dotenv@16.6.1: {}
 
@@ -20339,6 +20638,8 @@ snapshots:
     dependencies:
       ansi-colors: 4.1.3
       strip-ansi: 6.0.1
+
+  entities@2.2.0: {}
 
   entities@4.5.0: {}
 
@@ -21534,6 +21835,8 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  he@1.2.0: {}
+
   header-case@1.0.1:
     dependencies:
       no-case: 2.3.2
@@ -21580,6 +21883,16 @@ snapshots:
   hosted-git-info@9.0.2:
     dependencies:
       lru-cache: 11.2.5
+
+  html-minifier-terser@6.1.0:
+    dependencies:
+      camel-case: 4.1.2
+      clean-css: 5.3.3
+      commander: 8.3.0
+      he: 1.2.0
+      param-case: 3.0.4
+      relateurl: 0.2.7
+      terser: 5.46.0
 
   html-parse-stringify@3.0.1:
     dependencies:
@@ -22558,6 +22871,10 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
+  magic-string@0.30.8:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.5
+
   make-fetch-happen@11.1.1:
     dependencies:
       agentkeepalive: 4.6.0
@@ -23410,6 +23727,11 @@ snapshots:
       - supports-color
     optional: true
 
+  node-html-parser@5.4.2:
+    dependencies:
+      css-select: 4.3.0
+      he: 1.2.0
+
   node-int64@0.4.0: {}
 
   node-mock-http@1.0.4:
@@ -23502,6 +23824,10 @@ snapshots:
     dependencies:
       eventemitter2: 0.4.14
       lazy: 1.0.11
+
+  nth-check@2.1.1:
+    dependencies:
+      boolbase: 1.0.0
 
   nullthrows@1.1.1: {}
 
@@ -23912,6 +24238,8 @@ snapshots:
 
   path-type@4.0.0: {}
 
+  pathe@0.2.0: {}
+
   pathe@2.0.3: {}
 
   pathval@2.0.1: {}
@@ -23975,7 +24303,7 @@ snapshots:
     dependencies:
       split2: 4.2.0
 
-  ph-cmd@6.0.0-staging.1: {}
+  ph-cmd@6.0.0-staging.2: {}
 
   picocolors@1.1.1: {}
 
@@ -24212,6 +24540,8 @@ snapshots:
     optional: true
 
   process@0.11.10: {}
+
+  progress@2.0.3: {}
 
   promise-inflight@1.0.1:
     optional: true
@@ -24767,6 +25097,8 @@ snapshots:
       get-proto: 1.0.1
       gopd: 1.2.0
       set-function-name: 2.0.2
+
+  relateurl@0.2.7: {}
 
   relay-runtime@12.0.0(encoding@0.1.13):
     dependencies:
@@ -25601,7 +25933,6 @@ snapshots:
       acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
-    optional: true
 
   test-exclude@6.0.0:
     dependencies:
@@ -25923,6 +26254,13 @@ snapshots:
 
   unpipe@1.0.0: {}
 
+  unplugin@1.0.1:
+    dependencies:
+      acorn: 8.15.0
+      chokidar: 3.6.0
+      webpack-sources: 3.3.4
+      webpack-virtual-modules: 0.5.0
+
   unstorage@1.17.4(@azure/identity@4.13.0)(idb-keyval@6.2.2):
     dependencies:
       anymatch: 3.1.3
@@ -26205,15 +26543,39 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-node-polyfills@0.24.0(rollup@4.57.0)(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)):
+  vite-plugin-html@3.2.2(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)):
     dependencies:
-      '@rollup/plugin-inject': 5.0.5(rollup@4.57.0)
-      node-stdlib-browser: 1.3.1
-      vite: 6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
-    transitivePeerDependencies:
-      - rollup
+      '@rollup/pluginutils': 4.2.1
+      colorette: 2.0.20
+      connect-history-api-fallback: 1.6.0
+      consola: 2.15.3
+      dotenv: 16.6.1
+      dotenv-expand: 8.0.3
+      ejs: 3.1.10
+      fast-glob: 3.3.3
+      fs-extra: 10.1.0
+      html-minifier-terser: 6.1.0
+      node-html-parser: 5.4.2
+      pathe: 0.2.0
+      vite: 7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
 
-  vite-plugin-node-polyfills@0.25.0(rollup@4.57.0)(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)):
+  vite-plugin-html@3.2.2(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)):
+    dependencies:
+      '@rollup/pluginutils': 4.2.1
+      colorette: 2.0.20
+      connect-history-api-fallback: 1.6.0
+      consola: 2.15.3
+      dotenv: 16.6.1
+      dotenv-expand: 8.0.3
+      ejs: 3.1.10
+      fast-glob: 3.3.3
+      fs-extra: 10.1.0
+      html-minifier-terser: 6.1.0
+      node-html-parser: 5.4.2
+      pathe: 0.2.0
+      vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+
+  vite-plugin-node-polyfills@0.24.0(rollup@4.57.0)(vite@6.4.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)):
     dependencies:
       '@rollup/plugin-inject': 5.0.5(rollup@4.57.0)
       node-stdlib-browser: 1.3.1
@@ -26236,6 +26598,17 @@ snapshots:
       vite: 7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
     transitivePeerDependencies:
       - rollup
+
+  vite-plugin-svgr@4.5.0(rollup@4.57.0)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)):
+    dependencies:
+      '@rollup/pluginutils': 5.3.0(rollup@4.57.0)
+      '@svgr/core': 8.1.0(typescript@5.9.3)
+      '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.9.3))
+      vite: 7.3.1(@types/node@24.10.9)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
+      - typescript
 
   vite-plugin-svgr@4.5.0(rollup@4.57.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.2)):
     dependencies:
@@ -26420,6 +26793,10 @@ snapshots:
     optional: true
 
   webidl-conversions@3.0.1: {}
+
+  webpack-sources@3.3.4: {}
+
+  webpack-virtual-modules@0.5.0: {}
 
   whatwg-fetch@3.6.20:
     optional: true
