@@ -73,11 +73,16 @@ jobs:
           DEP_VERSION=""
 
           if [ "$EVENT_TYPE" = "dependency-release" ]; then
-            # Downstream package release — always route to main/latest
+            # Downstream package release — route by channel
             DEP_PACKAGE="${{ github.event.client_payload.package }}"
             DEP_VERSION="${{ github.event.client_payload.version }}"
-            CHANNEL="latest"
-            BRANCH="main"
+            CHANNEL="${{ github.event.client_payload.channel }}"
+            CHANNEL="${CHANNEL:-latest}"
+            case "$CHANNEL" in
+              dev) BRANCH="dev" ;;
+              staging) BRANCH="staging" ;;
+              *) BRANCH="main" ;;
+            esac
           else
             # Powerhouse monorepo release — route by channel
             case "$CHANNEL" in
@@ -151,7 +156,7 @@ jobs:
           esac
 
           # Downstream packages to exclude from powerhouse dep sync
-          EXCLUDE="@powerhousedao/contributor-billing @powerhousedao/chatroom-package @powerhousedao/notes-demo-package @powerhousedao/todo-demo"
+          EXCLUDE="@powerhousedao/clicker-game @powerhousedao/contributor-billing @powerhousedao/chatroom-package @powerhousedao/notes-demo-package @powerhousedao/todo-demo"
 
           PACKAGES=$(node -e "
             const pkg = require('./package.json');

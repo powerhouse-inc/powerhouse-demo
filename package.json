@@ -65,6 +65,7 @@
   "dependencies": {
     "@powerhousedao/builder-tools": "5.3.4",
     "@powerhousedao/chatroom-package": "1.0.2",
+    "@powerhousedao/clicker-game": "0.0.2-staging.0",
     "@powerhousedao/common": "5.3.4",
     "@powerhousedao/contributor-billing": "1.1.0",
     "@powerhousedao/design-system": "5.3.4",
