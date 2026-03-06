@@ -71,6 +71,7 @@
     "document-model": "6.0.0-staging.4",
     "graphql": "^16.10.0",
     "graphql-tag": "^2.12.6",
+    "@powerhousedao/clicker-game": "0.0.2-dev",
     "ph-cmd": "6.0.0-staging.4",
     "zod": "^4.3.5"
   },
