@@ -6,21 +6,8 @@
         "name": "",
         "url": ""
     },
-    "documentModels": [
-        {
-            "id": "powerhouse/clicker-game",
-            "name": "ClickerGame"
-        }
-    ],
-    "editors": [
-        {
-            "id": "clicker-game-editor",
-            "name": "ClickerGameEditor",
-            "documentTypes": [
-                "powerhouse/clicker-game"
-            ]
-        }
-    ],
+    "documentModels": [],
+    "editors": [],
     "apps": [],
     "subgraphs": [],
     "importScripts": []
