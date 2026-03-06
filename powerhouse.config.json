@@ -1,5 +1,4 @@
-
-  {
+{
   "documentModelsDir": "./document-models",
   "editorsDir": "./editors",
   "processorsDir": "./processors",
@@ -11,12 +10,15 @@
     "port": 4001
   },
   "packages": [
-    
-{
-  "packageName": "@powerhousedao/vetra",
-  "version": "5.3.0-staging.14",
-  "provider": "npm"
-}
-
+    {
+      "packageName": "@powerhousedao/vetra",
+      "version": "5.3.0-staging.14",
+      "provider": "npm"
+    },
+    {
+      "packageName": "@powerhousedao/clicker-game",
+      "version": "0.0.1-dev",
+      "provider": "npm"
+    }
   ]
 }
